@@ -1,0 +1,1506 @@
+<body onload="bodyloadJS();">
+        <imc-core-components-initializer data-personal="true" data-language="en-GB" data-client-id="1" data-design-client-id="1" data-rest-url="/ilp/restapi" data-content-url="/ils" data-log-level="INFO" data-design-url="/ils/data" data-solr-url="/ilp/solr/catalogindex/query" data-shopify-enabled="true" data-shopify-require-for-free="false" data-shopify-shops="[{&quot;id&quot;:0,&quot;name&quot;:&quot;Default Shop&quot;,&quot;shopifyBaseUrl&quot;:&quot;https://acca-ethics.myshopify.com&quot;,&quot;shopifyProductStorefrontToken&quot;:&quot;6aeb65096a53aa38dba9950591235939&quot;,&quot;shopifyVendorName&quot;:&quot;epsm-learning&quot;,&quot;requireForFree&quot;:false}]" data-prs-url="/ilp/rest/prs" data-preview="false" ng-version="7.2.15"></imc-core-components-initializer>
+        <imc-shopping-cart-action-handler ng-version="7.2.15"></imc-shopping-cart-action-handler>
+        <imc-bookshelf-action-handler ng-version="7.2.15"></imc-bookshelf-action-handler>
+        <imc-catalog-access-check-handler ng-version="7.2.15"></imc-catalog-access-check-handler>
+
+        <script id="imc-core-components-script" src="/microservices/core-components/index.js?v=24.2.0+dd08dc8e04"></script>
+<script>
+
+var utils = {
+    notifications: {
+        addPendingMessage: function() {
+            console.error("Notification Plugin is not initialized yet.")
+        }
+    }
+};
+
+</script>
+
+    <div id="notifications" tabindex="-1" aria-live="assertive"></div>
+
+
+    <script>
+        var notificationAppConfig = {
+            appPath: "/ilp/notification/",
+            globalNotificationDuration: ""
+        };
+    </script>
+
+    <script src="/ilp/notification/js/notificationRegistration.js"></script>
+
+    <script>embedJavascriptResources([ 
+{ 'identifier':'angular' },
+{ 'identifier':'imc-templating-module' },
+{ 'identifier':'angular-translate' },
+{ 'identifier':'translateIMCCustomLoaderService' },
+{ 'identifier':'angular-translate-imc-loader' },
+{ 'identifier':'angular-translate-imc-decorator' },
+{ 'identifier':'angular-ui-notification' },
+{ 'path': notificationAppConfig.appPath + 'js_vendor_min/app.dd08dc8e04.min.js'} ], function() {
+      angular.bootstrap(document.getElementById('notification'), ['notification']);
+
+});</script>
+
+    <div id="notification" class="ng-scope">
+        <div data-ng-controller="notificationListeningController" class="ng-scope"></div>
+    </div>
+        <h1 class="outline">ACCA Learning</h1>
+
+        <noscript>
+            <div class="no-javascript-supported">
+                JavaScript is not enabled in your current browser. Please enable JavaScript to use the full range of functionality in this application.
+            </div>
+        </noscript>
+            <div id="content-frame" class="entire-section">
+                    <!-- Inject the window.imcReactInit script-->
+    <script>
+        window.imcReactInit = {
+            ilpExternal: "/ilp",
+            hasIdm: "true",
+            language: "en-GB",
+            currentMenuId: "-1",
+            restUrl: "/ilp/restapi",
+            contentUrl: "/ils",
+            designUrl: "/ils/data",
+            clientId: "1",
+            designClientId: "1",
+            designName: "ACCA",
+            design: {  "ThemeGlobal": {    "css": {      "--theme-setting-globalwidth": "1280px",      "--theme-setting-globalradius": "0",      "--theme-color-primary": "#000",      "--theme-color-primary-over": "#fff",      "--theme-color-secondary": "#C80000",      "--theme-color-secondary-over": "#fff",      "--theme-color-success": "#8cc84b",      "--theme-color-success-over": "#fff",      "--theme-color-success-light": "#dcf0dc",      "--theme-color-alert": "#f24137",      "--theme-color-alert-over": "#fff",      "--theme-color-alert-light": "#fe9898",      "--theme-color-pending": "#ffc30a",      "--theme-color-pending-over": "#fff",      "--theme-color-pending-light": "#fffac8",      "--theme-color-neutral": "#7c9299",      "--theme-color-neutral-over": "#fff",      "--theme-color-info": "#64c8fa",      "--theme-color-info-over": "#fff",      "--theme-color-info-light": "#dcf0fa",      "--theme-color-disabled": "#bbb",      "--theme-color-disabled-over": "#fff",      "--theme-color-disabled-light": "#eaeaea",      "--theme-color-default": "#fff",      "--theme-color-default-over": "#000",      "--theme-color-body-primary": "#fff",      "--theme-color-body-secondary": "#fff",      "--theme-color-body-tertiary": "#f5f5f5",      "--theme-color-text-primary": "#000",      "--theme-color-text-secondary": "#000",      "--theme-color-text-meta": "#666",      "--theme-border-primary": "1px solid #d6d6d6",      "--theme-border-primary-thick": "2px solid #d6d6d6",      "--theme-border-secondary": "1px solid #bbb",      "--theme-border-tertiary": "1px solid #eee",      "--theme-font-family-primary": "\"avenir-medium\",Arial,Helvetica,sans-serif",      "--theme-font-family-secondary": "\"avenir-medium\",Arial,Helvetica,sans-serif",      "--theme-font-size-xs": "12px",      "--theme-font-size-s": "14px",      "--theme-font-size-m": "16px",      "--theme-font-size-xm": "18px",      "--theme-font-size-l": "20px",      "--theme-font-size-xl": "24px",      "--theme-font-size-xxl": "32px",      "--theme-font-weight-primary": "normal",      "--theme-font-weight-secondary": "bold",      "--theme-shadow-primary": "0 1px 6px 0 rgba(0,0,0,0.16)",      "--theme-shadow-secondary": "0 0 8px rgba(0,0,0,0.1)",      "--theme-table-row-primary-body": "#fff",      "--theme-table-row-primary-text": "#000",      "--theme-table-row-secondary-body": "#fafafa",      "--theme-table-row-secondary-text": "#000",      "--theme-table-row-hover-body": "#eee",      "--theme-table-row-hover-text": "#000",      "--theme-table-row-active-body": "#ffede8",      "--theme-table-row-active-text": "#000",      "--theme-table-header-body": "#fff",      "--theme-table-header-text": "#454545",      "--theme-pattern-primary": "white",      "--theme-pattern-primary-over": "#000"    }  },  "ImcLearningCard": {    "css": {      "--learning-card-border": "none"    }  }},
+            logLevel: "INFO",
+            shopifyEnabled: "true",
+            shopifyBaseUrl: "https://acca-ethics.myshopify.com",
+            shopifyStorefrontAccessToken: "6aeb65096a53aa38dba9950591235939",
+            shopifyVariantUserAttributeId: "",
+            isEcommerceShopEnabled: "false",
+            bundleView: "false",
+            contextPath: "/ilp",
+            signupData: null,
+            prsRestUrl: "/ilp/rest/prs",
+            signatureMode: 'EXTERNAL',
+            navigation: {"isFloated":false,"showQuickSearch":false,"data":{"logo":{"imageUrl":"/ils/data/client_design/ACCA/global/logos/Logo.svg","mobileImageUrl":"/ils/data/client_design/ACCA/global/logos/Logo.svg","title":"Open homepage","linkUrl":"/ilp"},"categories":[{"id":1004,"identifier":"learner","name":"Learner","tooltip":"","imageUrl":"/ils/data/navi/home.png","hoverImageUrl":null,"menus":[{"id":1107,"functionId":0,"identifier":"learner_my_home","name":"Home","tooltip":"","url":"/ilp/pages/internal-dashboard.jsf?menuId=1107#/?dashboardId=7","imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null},{"id":1108,"functionId":0,"identifier":"learner_catalogue","name":"Catalogue","tooltip":"","url":"/ilp/pages/catalogsearch.jsf?catalogId=1700&menuId=1108","imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null},{"id":1404,"functionId":180,"identifier":"personal_learning_area","name":"My learning","tooltip":"","url":"/ilp/pages/personalarea.jsf?menuId=1404","imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null}],"landingPageOnRoleSwitch":null}],"mainCategory":{"id":1002,"identifier":"main_category","name":"","tooltip":"","imageUrl":null,"hoverImageUrl":null,"menus":[{"id":1417,"functionId":192,"identifier":"languages","name":"Select language","tooltip":"","url":null,"imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null},{"id":114373,"functionId":520,"identifier":"shopify_cart","name":"Cart","tooltip":"","url":"https://acca-ethics.myshopify.com/cart","imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"BLANK","refreshSeconds":150,"refreshTimeMillis":1790199383668,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null},{"id":1419,"functionId":0,"identifier":"user_profile_folder","name":"User profile folder","tooltip":"","url":null,"imageUrl":"/ils/securedata/eJCXX2Ce6sTdDP_zewerwrBL5hn5D3Spyih85Bs7NydDiB8cFWp9jQDgxEcEiQ8a.jpg","hoverImageUrl":null,"folderType":"USER_PROFILE","target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":[{"id":1125,"functionId":79,"identifier":"my_profile","name":"Profile","tooltip":"","url":"/ui/profile/view?menuId=1125","imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null},{"id":111013,"functionId":0,"identifier":"eula","name":"End User Licence Agreement","tooltip":"","url":"/ilp/pages/internal-dashboard.jsf?menuId=111013#/?dashboardId=113930","imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null},{"id":1420,"functionId":187,"identifier":"logout","name":"Sign out","tooltip":"","url":"/ilp/pages/ils-redirect.jsf?menuId=1420","imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null}]}],"landingPageOnRoleSwitch":null},"languages":null,"currentLanguage":{"code":"en-GB","name":"English (GB)"},"startUrl":"/ilp/pages/internal-dashboard.jsf?menuId=1107#/?dashboardId=7","userName":"Precious Omowunmi Kayode","designLayout":{"stacked":true,"showLanguageFlag":false,"languageDisplay":"TEXT"}},"footer":{"id":0,"identifier":null,"name":"","tooltip":"","imageUrl":null,"hoverImageUrl":null,"menus":[{"id":1471426,"functionId":0,"identifier":"copyright","name":"Copyright © ACCA 2024. All rights reserved","tooltip":"","url":null,"imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null},{"id":110803,"functionId":0,"identifier":"acca_global","name":"ACCA Global","tooltip":"","url":"https://www.accaglobal.com","imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null},{"id":110824,"functionId":0,"identifier":"acca_privacy_policy","name":"ACCA Privacy Policy  ","tooltip":"","url":"https://www.accaglobal.com/gb/en/footertoolbar/privacy/acca-website-privacy-promise.html ","imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null},{"id":110467,"functionId":0,"identifier":"contact_us","name":"Contact us","tooltip":"","url":"https://www.accaglobal.com/gb/en/footer-toolbar/contact-us.html","imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null},{"id":110829,"functionId":0,"identifier":"faq","name":"FAQ","tooltip":"","url":"/ilp/pages/internal-dashboard.jsf?menuId=110829#/?dashboardId=110822","imageUrl":null,"hoverImageUrl":null,"folderType":null,"target":"SELF","refreshSeconds":null,"refreshTimeMillis":null,"disableUnreadMessagesCount":null,"myStaffSupervisorRelation":null,"myStaffEditRights":null,"serviceUrl":null,"serviceInternalUrl":null,"menus":null}],"landingPageOnRoleSwitch":null},"isStacked":true,"isUseNewNavigation":false,"wording":{"bundles":[{"key":"csMediaAvailableFromTo","value":"{0} to {1}"},{"key":"deleteButton","value":"Delete"},{"key":"mTypeEventName","value":"Event"},{"key":"strNumberOfItems","value":"({{count}} items)"},{"key":"naviCatalogLinkBundle","value":"Catalogue"},{"key":"strCommonNovember","value":"Nov"},{"key":"mTypeMediaFileName","value":"Multimedia file"},{"key":"ps_strCatalogLabel","value":"Catalogs"},{"key":"strCommonAugust","value":"Aug"},{"key":"strBrowseTheCatalogButton","value":"Browse the catalogue"},{"key":"courseEnrolmentPrerequisiteDialogConditionProgramTemplate","value":"Learning Path Template"},{"key":"strCommonSeptember","value":"Sep"},{"key":"strNavigationSearch","value":"Search"},{"key":"strCourseMode","value":"Learning mode"},{"key":"emChannel","value":"Channel"},{"key":"ps_search_instruction_item_three","value":"Try a more general search term"},{"key":"strCommonMarchFullName","value":"March"},{"key":"strProgrammes","value":"Learning paths"},{"key":"strEmptyShoppingCartText","value":"Your cart is empty. Browse the catalogue and add to the cart."},{"key":"mTypeWBTName","value":"Web-based training"},{"key":"priceFreeSubline","value":"Price"},{"key":"strQuickSearchCloseDrawer","value":"Close drawer"},{"key":"strCommonJuly","value":"Jul"},{"key":"mTypeLinkedInLearningName","value":"LinkedIn Learning"},{"key":"strQuickSearchCardResults","value":"Card results"},{"key":"strQuickSearchContent","value":"Search content"},{"key":"strGoToLoginForm","value":"Continue to the registration form"},{"key":"strCommonJanuary","value":"Jan"},{"key":"strRemoveFromCart","value":"Remove"},{"key":"dbsNavi_d215Name","value":"Training Calendar (Supervisor) – Calendar based"},{"key":"strLoading","value":"Load"},{"key":"strShowAll","value":"Show all"},{"key":"strCommonJune","value":"Jun"},{"key":"strCommonApril","value":"Apr"},{"key":"strShoppingCartText","value":"Shopping cart"},{"key":"strCommonMay","value":"May"},{"key":"strCommonFebruaryFullName","value":"February"},{"key":"strTotalPriceCartItem","value":"Total price: {{totalPrice}} {{currency}}"},{"key":"strCommonDecember","value":"Dec"},{"key":"strQuickSearchChips","value":"Chip list"},{"key":"strQuickSearchSuggestionsTitle","value":"Search suggestions"},{"key":"course","value":"Course"},{"key":"strNumberOfUsersCartItem","value":"Users: {{count}}"},{"key":"mTypeActivityName","value":"Article"},{"key":"strMedia","value":"Media"},{"key":"strQuantityMaxAmount","value":"/ {{amount}}"},{"key":"strCartItems","value":"Items"},{"key":"mTypeExternalMediaName","value":"External Content"},{"key":"mTypeLinkName","value":"Link"},{"key":"strDeleteUserButton","value":"Delete user {{userName}}"},{"key":"strQuickSearchEmptyTitle","value":"Sorry we could not find matching content to your search - <strong>{{searchTerm}}</strong>"},{"key":"strCommonFebruary","value":"Feb"},{"key":"strCommonOctoberFullName","value":"October"},{"key":"strNothingFound","value":"No results found"},{"key":"strQuantityTextBefore","value":"Empty seats:"},{"key":"mTypeUnknown","value":"Unknown"},{"key":"strCommonOctober","value":"Oct"},{"key":"ps_multiple_sources_context","value":"Multiple Sources"},{"key":"strCommonAprilFullName","value":"April"},{"key":"csSearchTermTitle","value":"Your search term"},{"key":"mTypeChannelName","value":"Channels"},{"key":"strNavigationNoResults","value":"No results"},{"key":"strCommonNovemberFullName","value":"November"},{"key":"strQuickSearchEmptyText","value":"Try searching in <strong>all content</strong> areas."},{"key":"strMediaAccessDownloadEnabled","value":"Prevent download of media through context menu access (right click)"},{"key":"strQuantityDecreaseBtnText","value":"Decrease the number of seats"},{"key":"strCommonDecemberFullName","value":"December"},{"key":"mTypeTemplate","value":"Course template"},{"key":"strNavigationMore","value":"More"},{"key":"strQuickSearchSeeAllText1","value":"See all {{totalElements}} results"},{"key":"strRemoveCartItemSuccess","value":"Item successfully removed from the cart!"},{"key":"strQuickSearchSeeAllText2","value":"See all {{totalElements}} results from {{dropdownValue}}"},{"key":"dbsNavi_d216Name","value":"Training Calendar (Supervisor) - Resource based"},{"key":"strQuickSearchRecentTitle","value":"Recent searches"},{"key":"strBuyNow","value":"Buy now"},{"key":"strCommonMayFullName","value":"May"},{"key":"mTypeCourseSetName","value":"Course set"},{"key":"strQuickSearchSuggestions","value":"Suggestions:"},{"key":"strMultipleShopsNotification","value":"This cart contains courses sold by different providers. Multiple checkouts are required."},{"key":"strShowLess","value":"Show less"},{"key":"bypassContent","value":"Skip to content"},{"key":"strCommonJulyFullName","value":"July"},{"key":"dbsNavi_d214Name","value":"Training calendar learner"},{"key":"dbsNavi_d182Name","value":"Experience area"},{"key":"strRemoveCartItemFailure","value":"Could not remove item from cart"},{"key":"strParticipantBundleCheckout","value":"Participant"},{"key":"mTypeFileName","value":"File"},{"key":"mTypeLTIName","value":"LTI Tool"},{"key":"strUsersListCartItem","value":"List of users"},{"key":"strQuantityIncreaseBtnText","value":"Increase the number of seats"},{"key":"mTypeCatalogName","value":"Catalogues"},{"key":"ps_strChannelLabel","value":"Channels"},{"key":"strInfoCartTextSubtotalZero","value":"The checkout process is required for invoicing purposes only"},{"key":"dbsNavi_d180Name","value":"Learning status"},{"key":"mTypeForumName","value":"Forum"},{"key":"strSearchAllContents","value":"All contents"},{"key":"strItemQuantityChangedFailure","value":"Quantity could not be updated"},{"key":"ps_search_instruction_item_one","value":"Make sure all words are spelled correctly"},{"key":"strProceedToCheckout","value":"Proceed to checkout"},{"key":"csSearch","value":"Search"},{"key":"strCatalogCatalog","value":"Catalogue"},{"key":"strSubtotal","value":"Subtotal"},{"key":"strCommonMarch","value":"Mar"},{"key":"strCommonJuneFullName","value":"June"},{"key":"strCommonJanuaryFullName","value":"January"},{"key":"strCommonSeptemberFullName","value":"September"},{"key":"strUnreadMessages","value":"{{unreadInboxMail}} unread"},{"key":"menuTitleMainNavigation","value":"Main navigation"},{"key":"strCheckForTypos","value":"Check for typos or use different keywords"},{"key":"strItemQuantityChangedSuccess","value":"Quantity successfully updated"},{"key":"strCommonAugustFullName","value":"August"},{"key":"strYou","value":"You"},{"key":"sessionErrorDialogHeadline","value":"The current session has ended."},{"key":"strCartProvidedBy","value":"Provided by:"}]},"isSticky":false},
+            announcements: {"data":null,"bundles":{"strCancel":"Cancel","strAnnouncement":"Announcement","strAknowledge":"Acknowledge","strBtnClose":"Close","ch_download_button":"Download"}},
+            isHideNavigation: false,
+        };
+    </script>
+                            <div class="contain-to-grid navigation-section" id="top-navi">
+                                <div class="imc-topbar  ">
+                                    <imc-navigation data-personal="true" data-ilp-external="/ilp" data-has-idm="true" data-language="en-GB" data-current-menu-id="" data-rest-url="/ilp/restapi" data-content-url="/ils" data-design-url="/ils/data" data-client-id="1" data-shopify-enabled="true" data-shopify-require-for-free="false" data-shopify-shops="[{&quot;id&quot;:0,&quot;name&quot;:&quot;Default Shop&quot;,&quot;shopifyBaseUrl&quot;:&quot;https://acca-ethics.myshopify.com&quot;,&quot;shopifyProductStorefrontToken&quot;:&quot;6aeb65096a53aa38dba9950591235939&quot;,&quot;shopifyVendorName&quot;:&quot;epsm-learning&quot;,&quot;requireForFree&quot;:false}]" data-design-client-id="1" data-log-level="INFO" data-bundle-view="false" data-context-path="/ilp" _nghost-ypq-c0="" ng-version="7.2.15"><!----><div _ngcontent-ypq-c0="" class="navigation-wrapper-html hide-for-print navigation-wrapper-html--ready"><div _ngcontent-ypq-c0="" class="bypass-block"><a _ngcontent-ypq-c0="" class="bypass-anchor" href="javascript:void(0)" tabindex="0" title="Skip to content" aria-label="Skip to content"> Skip to content </a></div><imc-navigation-content _ngcontent-ypq-c0="" _nghost-ypq-c1=""><nav _ngcontent-ypq-c1="" class="uk-navbar-container imc-navigation uk-navbar" uk-navbar="mode: click;" style="position: relative;"><div _ngcontent-ypq-c1="" class="imc-navigation__content"><!----><div _ngcontent-ypq-c1="" class="imc-navigation__content__logo-container"><imc-navigation-logo _ngcontent-ypq-c1="" _nghost-ypq-c3=""><div _ngcontent-ypq-c3="" class="imc-navigation-logo"><!----><a _ngcontent-ypq-c3="" class="uk-navbar-item uk-logo imc-navigation-logo__link" title="Open homepage" id="imc-navigation-logo-link" href="/ilp"><img _ngcontent-ypq-c3="" alt="" class="imc-navigation-logo__link__image large-image" src="/ils/data/client_design/ACCA/global/logos/Logo.svg" title="Open homepage"><!----><img _ngcontent-ypq-c3="" alt="" class="imc-navigation-logo__link__image mobile-image" src="/ils/data/client_design/ACCA/global/logos/Logo.svg" title="Open homepage"></a><!----><!----></div></imc-navigation-logo></div><div _ngcontent-ypq-c1="" class="imc-navigation__content__menu"><div _ngcontent-ypq-c1="" class="uk-navbar-left imc-navigation__content__menu__left-section"><!----><!----><a _ngcontent-ypq-c1="" class="imc-navigation__content__menu__left-section__mobile-menu-trigger uk-icon" href="#offcanvas-more" role="button" uk-icon="icon: navbar-toggle-icon; ratio: 1.2;" uk-toggle="" title="Main navigation" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect y="9" width="20" height="2"></rect><rect y="3" width="20" height="2"></rect><rect y="15" width="20" height="2"></rect></svg></a><!----><ul _ngcontent-ypq-c1="" class="uk-navbar-nav imc-navigation__content__menu__left-section__main-menu" style="position: relative;"><!----><!----><li _ngcontent-ypq-c1=""><imc-navigation-offcanvas _ngcontent-ypq-c1="" _nghost-ypq-c5=""><imc-navigation-offcanvas-container _ngcontent-ypq-c5="" _nghost-ypq-c9=""><div _ngcontent-ypq-c9="" class="imc-navigation-offcanvas-container"><!----><div _ngcontent-ypq-c9="" class="imc-navigation-offcanvas-container__offcanvas uk-offcanvas" id="offcanvas-more" data-uk-offcanvas="overlay:true; flip: false;" style="margin-top: 208.125px;"><div _ngcontent-ypq-c9="" class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide imc-navigation-offcanvas-container__offcanvas__content" id="imc-navigation-search-offcanvas"><!----><div _ngcontent-ypq-c5="" class="imc-navigation-offcanvas__section" role="navigation"><imc-navigation-menu _ngcontent-ypq-c5="" _nghost-ypq-c10=""><ul _ngcontent-ypq-c10="" role="menu" class="uk-nav uk-nav-default uk-nav-offcanvas uk-navbar-dropdown-nav imc-navigation-menu imc-navigation-menu--depth-2" id="navi_sublist_learner_my_home"><!----><li _ngcontent-ypq-c10="" class="imc-navigation-menu__item "><span _ngcontent-ypq-c10=""><!----><a _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content imc-navigation-menu__item__content--can-activate" role="menuitem" style="text-decoration: none;" tabindex="0" id="navi_item_learner_my_home" href="/ilp/pages/internal-dashboard.jsf?menuId=1107&amp;locale=en-GB&amp;showbundlekeys=false#/?dashboardId=7" target="_self"><!----><!----><span _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content__text">Home</span></a></span><!----><!----></li><li _ngcontent-ypq-c10="" class="imc-navigation-menu__item "><span _ngcontent-ypq-c10=""><!----><a _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content imc-navigation-menu__item__content--can-activate" role="menuitem" style="text-decoration: none;" tabindex="0" id="navi_item_learner_catalogue" href="/ilp/pages/catalogsearch.jsf?catalogId=1700&amp;menuId=1108&amp;locale=en-GB&amp;showbundlekeys=false" target="_self"><!----><!----><span _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content__text">Catalogue</span></a></span><!----><!----></li><li _ngcontent-ypq-c10="" class="imc-navigation-menu__item "><span _ngcontent-ypq-c10=""><!----><a _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content imc-navigation-menu__item__content--can-activate" role="menuitem" style="text-decoration: none;" tabindex="0" id="navi_item_personal_learning_area" href="/ilp/pages/personalarea.jsf?menuId=1404&amp;locale=en-GB&amp;showbundlekeys=false" target="_self"><!----><!----><span _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content__text">My learning</span></a></span><!----><!----></li></ul></imc-navigation-menu></div></div></div></div></imc-navigation-offcanvas-container></imc-navigation-offcanvas></li><div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div class="resize-sensor-expand" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 221px; height: 10px;"></div></div><div class="resize-sensor-shrink" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 200%; height: 200%;"></div></div></div></ul></div><!----><div _ngcontent-ypq-c1="" class="uk-navbar-right"><ul _ngcontent-ypq-c1="" class="uk-navbar-nav imc-navigation__content__menu__right-section"><!----><!----><!----><!----><!----><!----><li _ngcontent-ypq-c1=""><imc-shopping-cart _ngcontent-ypq-c1="" _nghost-ypq-c8=""><imc-navigation-offcanvas-container _ngcontent-ypq-c8="" _nghost-ypq-c9=""><div _ngcontent-ypq-c9="" class="imc-navigation-offcanvas-container"><!----><a _ngcontent-ypq-c9="" class="imc-navigation-offcanvas-container__dropdown-handle imc-navigation-offcanvas-container__dropdown-handle--has-icon" href="#shopify_cart" role="button" target="_self" uk-toggle="" title="Cart" aria-expanded="false"><!----><!----><!----><span _ngcontent-ypq-c9="" class="imc-navigation-offcanvas-container__dropdown-handle__icon uk-icon" uk-icon="cart"><!----><!----><svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="7.3" cy="17.3" r="1.4"></circle><circle cx="13.3" cy="17.3" r="1.4"></circle><polyline fill="none" stroke="#000" points="0 2 3.2 4 5.3 12.5 16 12.5 18 6.5 8 6.5"></polyline></svg></span></a><div _ngcontent-ypq-c9="" class="imc-navigation-offcanvas-container__offcanvas uk-offcanvas" id="shopify_cart" data-uk-offcanvas="overlay:true; flip: true;" style="margin-top: 208.125px;"><div _ngcontent-ypq-c9="" class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide imc-navigation-offcanvas-container__offcanvas__content" id="imc-navigation-search-offcanvas"><div _ngcontent-ypq-c8="" class="cart-container uk-grid uk-grid-stack" uk-grid=""><div _ngcontent-ypq-c8="" class="shopping-cart-container"><div _ngcontent-ypq-c8="" class="shopping-cart__header-container"><div _ngcontent-ypq-c8="" class="shopping-cart__header"><span _ngcontent-ypq-c8="" class="cart-title"> Shopping cart </span><span _ngcontent-ypq-c8="" class="cart-close-button"><div _ngcontent-ypq-c8="" class="uk-width-auto"><a _ngcontent-ypq-c8="" class="uk-navbar-dropdown-close cart-close uk-icon uk-close" target="_self" uk-close="" uk-toggle="" href="#shopify_cart" aria-expanded="false"><svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line><line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line></svg></a></div></span></div><!----></div><!----><div _ngcontent-ypq-c8="" class="shops-container__single-shop" style=""><!----><div _ngcontent-ypq-c8=""><imc-shopping-cart-content _ngcontent-ypq-c8="" _nghost-ypq-c12=""><div _ngcontent-ypq-c12="" class="shopping-cart-wrapper"><!----><!----><!----></div></imc-shopping-cart-content><!----></div><!----><div _ngcontent-ypq-c8="" class="shopping-cart__footer__empty-cart"> Your cart is empty. Browse the catalogue and add to the cart. </div></div></div></div></div></div></div></imc-navigation-offcanvas-container></imc-shopping-cart></li><!----><!----><!----><!----><!----><li _ngcontent-ypq-c1=""><imc-navigation-dropdown _ngcontent-ypq-c1="" _nghost-ypq-c4=""><div _ngcontent-ypq-c4="" class="imc-navigation-dropdown"><!----><!----><!----><!----><div _ngcontent-ypq-c4=""><imc-navigation-offcanvas _ngcontent-ypq-c4="" _nghost-ypq-c5=""><imc-navigation-offcanvas-container _ngcontent-ypq-c5="" _nghost-ypq-c9=""><div _ngcontent-ypq-c9="" class="imc-navigation-offcanvas-container"><!----><a _ngcontent-ypq-c9="" class="imc-navigation-offcanvas-container__dropdown-handle imc-navigation-offcanvas-container__dropdown-handle--has-image" href="#menu-1419" role="button" target="_self" uk-toggle="" title="User profile folder" aria-expanded="false"><!----><img _ngcontent-ypq-c9="" class="imc-navigation-offcanvas-container__dropdown-handle__image imc-navigation-offcanvas-container__dropdown-handle__image--circle" src="/ils/securedata/eJCXX2Ce6sTdDP_zewerwrBL5hn5D3Spyih85Bs7NydDiB8cFWp9jQDgxEcEiQ8a.jpg" alt="User profile folder"><!----><!----></a><div _ngcontent-ypq-c9="" class="imc-navigation-offcanvas-container__offcanvas uk-offcanvas" id="menu-1419" data-uk-offcanvas="overlay:true; flip: true;" style="margin-top: 208.125px;"><div _ngcontent-ypq-c9="" class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide imc-navigation-offcanvas-container__offcanvas__content" id="imc-navigation-search-offcanvas"><!----><div _ngcontent-ypq-c5="" class="imc-navigation-offcanvas__section" role="navigation"><imc-navigation-menu _ngcontent-ypq-c5="" _nghost-ypq-c10=""><ul _ngcontent-ypq-c10="" role="menu" class="uk-nav uk-nav-default uk-nav-offcanvas uk-navbar-dropdown-nav imc-navigation-menu imc-navigation-menu--depth-3" id="navi_sublist_"><!----><li _ngcontent-ypq-c10="" class="imc-navigation-menu__item "><span _ngcontent-ypq-c10=""><!----></span><!----><div _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content imc-navigation-menu__item__content--highlight imc-navigation-menu__item__content--flip"><!----><!----><span _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content__text">Precious Omowunmi Kayode</span></div><!----></li></ul></imc-navigation-menu></div><div _ngcontent-ypq-c5="" class="imc-navigation-offcanvas__section" role="navigation"><imc-navigation-menu _ngcontent-ypq-c5="" _nghost-ypq-c10=""><ul _ngcontent-ypq-c10="" role="menu" class="uk-nav uk-nav-default uk-nav-offcanvas uk-navbar-dropdown-nav imc-navigation-menu imc-navigation-menu--depth-3" id="navi_sublist_my_profile"><!----><li _ngcontent-ypq-c10="" class="imc-navigation-menu__item imc-navigation-menu__item--has-children"><span _ngcontent-ypq-c10=""><!----><a _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content imc-navigation-menu__item__content--can-activate imc-navigation-menu__item__content--flip" role="menuitem" style="text-decoration: none;" tabindex="0" id="navi_item_my_profile" href="/ui/profile/view?menuId=1125&amp;locale=en-GB&amp;showbundlekeys=false" target="_self"><!----><!----><span _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content__text">Profile</span></a></span><!----><!----><imc-navigation-menu _ngcontent-ypq-c10="" _nghost-ypq-c10=""><ul _ngcontent-ypq-c10="" role="menu" class="uk-nav uk-nav-default uk-nav-offcanvas uk-navbar-dropdown-nav imc-navigation-menu imc-navigation-menu--depth-4" id="navi_sublist_my_profile-children"><!----></ul></imc-navigation-menu></li></ul></imc-navigation-menu></div><div _ngcontent-ypq-c5="" class="imc-navigation-offcanvas__section" role="navigation"><imc-navigation-menu _ngcontent-ypq-c5="" _nghost-ypq-c10=""><ul _ngcontent-ypq-c10="" role="menu" class="uk-nav uk-nav-default uk-nav-offcanvas uk-navbar-dropdown-nav imc-navigation-menu imc-navigation-menu--depth-3" id="navi_sublist_eula"><!----><li _ngcontent-ypq-c10="" class="imc-navigation-menu__item imc-navigation-menu__item--has-children"><span _ngcontent-ypq-c10=""><!----><a _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content imc-navigation-menu__item__content--can-activate imc-navigation-menu__item__content--flip" role="menuitem" style="text-decoration: none;" tabindex="0" id="navi_item_eula" href="/ilp/pages/internal-dashboard.jsf?menuId=111013&amp;locale=en-GB&amp;showbundlekeys=false#/?dashboardId=113930" target="_self"><!----><!----><span _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content__text">End User Licence Agreement</span></a></span><!----><!----><imc-navigation-menu _ngcontent-ypq-c10="" _nghost-ypq-c10=""><ul _ngcontent-ypq-c10="" role="menu" class="uk-nav uk-nav-default uk-nav-offcanvas uk-navbar-dropdown-nav imc-navigation-menu imc-navigation-menu--depth-4" id="navi_sublist_eula-children"><!----></ul></imc-navigation-menu></li></ul></imc-navigation-menu></div><div _ngcontent-ypq-c5="" class="imc-navigation-offcanvas__section" role="navigation"><imc-navigation-menu _ngcontent-ypq-c5="" _nghost-ypq-c10=""><ul _ngcontent-ypq-c10="" role="menu" class="uk-nav uk-nav-default uk-nav-offcanvas uk-navbar-dropdown-nav imc-navigation-menu imc-navigation-menu--depth-3" id="navi_sublist_logout"><!----><li _ngcontent-ypq-c10="" class="imc-navigation-menu__item imc-navigation-menu__item--has-children"><span _ngcontent-ypq-c10=""><!----><a _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content imc-navigation-menu__item__content--can-activate imc-navigation-menu__item__content--flip" role="menuitem" style="text-decoration: none;" tabindex="0" id="navi_item_logout" href="/ilp/pages/ils-redirect.jsf?menuId=1420&amp;locale=en-GB&amp;showbundlekeys=false" target="_self"><!----><!----><span _ngcontent-ypq-c10="" class="imc-navigation-menu__item__content__text">Sign out</span></a></span><!----><!----><imc-navigation-menu _ngcontent-ypq-c10="" _nghost-ypq-c10=""><ul _ngcontent-ypq-c10="" role="menu" class="uk-nav uk-nav-default uk-nav-offcanvas uk-navbar-dropdown-nav imc-navigation-menu imc-navigation-menu--depth-4" id="navi_sublist_logout-children"><!----></ul></imc-navigation-menu></li></ul></imc-navigation-menu></div></div></div></div></imc-navigation-offcanvas-container></imc-navigation-offcanvas></div><!----><!----></div></imc-navigation-dropdown></li><!----><!----></ul></div></div></div><div dir="ltr" class="resize-sensor" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div class="resize-sensor-expand" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 385px; height: 218px;"></div></div><div class="resize-sensor-shrink" style="pointer-events: none; position: absolute; inset: 0px; overflow: hidden; z-index: -1; visibility: hidden; max-width: 100%;"><div style="position: absolute; left: 0px; top: 0px; transition: all; width: 200%; height: 200%;"></div></div></div></nav></imc-navigation-content></div></imc-navigation>
+                                </div>
+                                <!-- if sticky -> this height-wrap-container takes the same height as .imc-topbar -->
+                                <div class="topbar-height-wrap"></div>
+                            </div>
+
+                            <script id="imc-navigation-script" src="/microservices/navigation/index.js?v=24.2.0+dd08dc8e04"></script>
+
+                        <script type="module" src="/core-react-ui/assets/embed-CWIE5cs5.js"> </script>
+                    <main class="content-section" id="content-section">
+                        <div class="full-size-section ">
+        <script>
+            var catalogSearchAppConfig = {
+                appPath: "/ilp/catalogsearch/",
+                catalogId: "0",
+                configSidebarFacets: "facet-classifications".split(','),
+                sidebarFacets: [],
+                userName: " ",
+                employeeId: -1,
+                solrUrl: "/ilp/solr/catalogindex/query",
+                configSidebarQuickFacets: "facet-new-content,facet-top-content,facet-external-price-amount".split(','),
+                includeIndirectlyAssignedCourses: false,
+                forceShowIndirectlyAssignedCourses: true,
+                facetsWhichHideCourseTemplates: "".split(','),
+                facetsWhichForceShowIndirectCourses: "".split(','),
+                showSidebar: true,
+                displayMode: "LIST",
+                searchResultCount: 10,
+                appendWildcard: false,
+                appendLikeWildcard: false,
+                isAutoEscapeSolr: false,
+                hierarchyFacet: "category",
+                showSummary: true,
+                hasSidebarFacets: true,
+                collapsedFacets: "".split(','),
+                useExternalPriceForFreeOfChargeFacet: true,
+                typeAheadWaitMs: 200,
+                typeAheadMinLength: 2,
+                typeAheadFocusFirst: true,
+                isCatalogUseComponentAcl: false,
+                preferImageOnly: true,
+                showAtSmartphonePortrait: true,
+                formIdSpecificBundleEnabled:false,
+                formIdForSpecificBundle:0,
+                formIdSpecificBundleName: "",
+                showRatingAndReviews: false,
+                showSelfEnrolmentPeriod: false,
+                showZeroRating: true,
+                sortOrder: "title_def asc",
+                allowManualSorting: false,
+                sortOptions: "",
+                manualSortOrder: "name ASC",
+                excludeUnlimitedPlacesFromFreePlaces: false,
+                classificationFilterSortingEnabled: false,
+                classificationFilterSortField: "",
+                classificationClientConfig: '{"count":null,"rootIds":null,"childIds":null}',
+                courseAndProgramOnBookshelfEnabled: false,
+                bookshelfEnabled: false,
+            };
+            var facetLimit = 99;
+            if (facetLimit && facetLimit > 0) {
+                catalogSearchAppConfig.facetLimit = facetLimit;
+            }
+            var employeeHeaderConfig = {
+                employeeId: catalogSearchAppConfig.employeeId > 0 ? catalogSearchAppConfig.employeeId : "@self",
+                page: 'catalogsearch',
+                waitForBundles: true
+            }
+        </script>
+
+        <imc-breadcrumbs-tracker-wrapper data-page-identifier="catalogsearch" data-language="en-GB" data-content-url="/ils" data-log-level="INFO" ng-version="7.2.15"><imc-breadcrumbs-tracker><!----></imc-breadcrumbs-tracker></imc-breadcrumbs-tracker-wrapper>
+        <script id="imc-breadcrumbs-script" src="/microservices/breadcrumbs/index.js?v=24.2.0+dd08dc8e04"></script>
+
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="/ilp/resources/design/css/autocomplete.mod.css">
+        <link rel="stylesheet" href="/ilp/resources/design/css/foundation-datepicker.css">
+
+        <header id="course-header"></header>
+        <div id="catalogSearchContentWrapper" data-translate-cloak="any" class="angular-app-content-wrapper ng-scope">
+            <div class="subnavigation-section">
+                <imc-user-context class="ng-isolate-scope"><!-- ngIf: userContextSettings.displayUserContext -->
+
+<div id="imc-user-context-sticky-placeholder"></div>
+</imc-user-context>
+                <imc-subnavigation-header data-custom-title="" class="ng-isolate-scope"><!-- ngIf: settings.displayHeader --><section id="imc-subnavigation-header-section" data-ng-if="settings.displayHeader" class="ng-scope">
+    <div class="imc-subnavigation-header__inner grid-container" data-ng-class="{'imc-subnavigation-header__inner--no-side-padding': settings.partialHeader}">
+        <div class="left-part">
+            <imc-subnavigation-breadcrumbs class="ng-isolate-scope"><!-- ngIf: hasBreadcrumbsToDisplay --><div class="imc-subnavigation-header__breadcrumbs hide-for-print ng-scope" data-ng-if="hasBreadcrumbsToDisplay">
+    <!-- ngRepeat: breadcrumb in breadcrumbs --><!-- ngIf: !$last || onlyRoot --><div data-ng-repeat="breadcrumb in breadcrumbs" data-ng-if="!$last || onlyRoot" class="imc-subnavigation-header__breadcrumbs__item ng-scope imc-subnavigation-header__breadcrumbs__item--first imc-subnavigation-header__breadcrumbs__item--last" data-ng-class="{
+            'imc-subnavigation-header__breadcrumbs__item--first': $first,
+            'imc-subnavigation-header__breadcrumbs__item--before-last-but-one': $index == breadcrumbs.length - 4,
+            'imc-subnavigation-header__breadcrumbs__item--last-but-one': $index == breadcrumbs.length - 3,
+            'imc-subnavigation-header__breadcrumbs__item--last': $index == breadcrumbs.length - 2
+          }">
+        <a role="link" class="imc-subnavigation-header__breadcrumbs__item__link" data-ng-click="navigateOnBreadcrumb(breadcrumb)" data-ng-keydown="$event.keyCode === 13 ? navigateOnBreadcrumb(breadcrumb) : false" aria-label="breadcrumbTooltip" tabindex="0">
+          <!-- ngIf: showIcon(breadcrumb) --><div data-ng-if="showIcon(breadcrumb)" class="imc-subnavigation-header__breadcrumbs__item__link__icon ng-scope"></div><!-- end ngIf: showIcon(breadcrumb) -->
+          <!-- ngIf: breadcrumb.page.info.icon -->
+          <div aria-hidden="true" class="imc-subnavigation-header__breadcrumbs__item__link__text ng-binding">Dashboard</div>
+        </a>
+        <!-- ngIf: $first && breadcrumbs.length > 3 -->
+    </div><!-- end ngIf: !$last || onlyRoot --><!-- end ngRepeat: breadcrumb in breadcrumbs --><!-- ngIf: !$last || onlyRoot --><!-- end ngRepeat: breadcrumb in breadcrumbs -->
+</div><!-- end ngIf: hasBreadcrumbsToDisplay -->
+</imc-subnavigation-breadcrumbs>
+            <div class="imc-subnavigation-header__title">
+                <!-- ngIf: !settings.isTranslatedHeader --><div data-ng-if="!settings.isTranslatedHeader" role="heading" aria-level="1" class="imc-subnavigation-header__title__text ng-binding ng-scope" aria-label="Catalogue">Catalogue
+                </div><!-- end ngIf: !settings.isTranslatedHeader -->
+                <!-- ngIf: settings.isTranslatedHeader -->
+            </div>
+        </div>
+        <div class="right-part">
+            <!-- ngIf: settings.buttons && settings.buttons.length -->
+        </div>
+    </div>
+</section><!-- end ngIf: settings.displayHeader -->
+</imc-subnavigation-header>
+            </div>
+            <catalog-search-content><section class="container course-catalogue margin-top-44 angular-app-content grid-container" data-ng-view="" id="course-section">
+    <script type="text/ng-template" id="customTemplate">
+        <div>
+            <a ng-attr-title="{{match.label}}">
+                <span ng-bind-html="match.label | uibTypeaheadHighlight:match.label.replace(query,'')"></span><span> ({{match.model.count}})</span>
+            </a>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="customPopupTemplate">
+        <div>
+            <ul class="dropdown-menu" ng-show="isOpen() && !moveInProgress"
+                ng-style="{top: position().top+'px', left: position().left+'px'}" role="listbox"
+                aria-hidden="{{!isOpen()}}">
+                <li class="uib-typeahead-match" ng-repeat="match in matches track by $index"
+                    ng-class="{active: isActive($index) }" ng-mouseenter="selectActive($index)"
+                    ng-click="selectMatch($index, $event)" role="option" id="{{::match.id}}">
+                    <div uib-typeahead-match index="$index" match="match" query="query"
+                         template-url="templateUrl"></div>
+                </li>
+            </ul>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="customMatchTemplate">
+        <div>
+            <a href
+               tabindex="-1"
+               ng-bind-html="match.label | uibTypeaheadHighlight:query"
+               ng-attr-title="{{match.label}}"></a>
+        </div>
+    </script>
+
+    <!-- empty functionality -->
+
+    <!-- if not empty -->
+    <div class="search-wrapper grid-x grid-margin-x padding-bottom-24">
+        <!-- search input field -->
+        <div class="cell small-24 search-bar-wrapper">
+            <div class="search-bar-wrapper__searchbar search-input-field-wrapper">
+                <imc-search-bar data-model="autocomplete" data-identifier="'searchField'" data-change="change" title-bundle="'csSearchTermTitle' | translate" field-identifier="'searchField'" button-identifier="'startSearchBtn'" data-search-button-text="'csSearch' | translate" data-search-button-title="'csSearch' | translate" data-typeahead-min-length="catalogSearchAppConfig.typeAheadMinLength" data-typeahead-method="loadFacetTerms" data-typeahead-wait-ms="catalogSearchAppConfig.typeAheadWaitMs" data-typeahead-on-select="completionSelected" data-typeahead-template-url="'customTemplate.html'" data-typeahead-popup-template-url="'customPopupTemplate.html'" data-typeahead-match-template-url="'customMatchTemplate.html'" data-typeahead-focus-first="catalogSearchAppConfig.typeAheadFocusFirst" ng-attr-placeholder="'csSearchTermPlaceholder' | translate" class="ng-isolate-scope" placeholder="'csSearchTermPlaceholder' | translate"><div class="imc-search-bar">
+    <input type="text" autocomplete="off" title="Your search term" aria-label="Your search term" id="searchField" placeholder="Search term" data-ng-model="model" data-typeahead-on-select="typeaheadOnSelect($item, $model, $label)" data-typeahead-wait-ms="typeaheadWaitMs" data-typeahead-min-length="typeaheadMinLength" uib-typeahead="acd as acd.term for acd in typeaheadMethod($viewValue)" data-typeahead-template-url="customTemplate" data-typeahead-popup-template-url="customPopupTemplate" data-typeahead-match-template-url="customMatchTemplate" data-typeahead-focus-first="typeaheadFocusFirst" data-ng-keypress="$event.which === 13 ? change(model, $event) : ''" class="imc-search-bar__search-field imc-search-bar__search-field--connected ng-pristine ng-untouched ng-valid ng-empty" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-10-2925"><div uib-typeahead-popup="" id="typeahead-10-2925" matches="matches" active="activeIdx" select="select(activeIdx, evt)" move-in-progress="moveInProgress" query="query" position="position" assign-is-open="assignIsOpen(isOpen)" debounce="debounceUpdate" template-url="customTemplate" popup-template-url="customPopupTemplate" class="ng-isolate-scope">
+            <ul class="dropdown-menu ng-hide" ng-show="isOpen() &amp;&amp; !moveInProgress" ng-style="{top: position().top+'px', left: position().left+'px'}" role="listbox" aria-hidden="true">
+                <!-- ngRepeat: match in matches track by $index -->
+            </ul>
+        </div>
+    <button class="imc-search-bar__search-button" id="startSearchBtn" title="Search" data-ng-click="change(model, $event)">
+            <span class="imc-search-bar__search-button__text ng-binding">
+                Search
+            </span>
+            <span class="imc-search-bar__search-button__search-icon icon icon-magnifier icon--default-line-height"></span>
+    </button>
+</div></imc-search-bar>
+            </div>
+            <div class="search-bar-wrapper__button">
+                <!-- ngIf: hasFacetSearch() --><button id="filterBtnMediumDown" class="search-bar-wrapper__filter-button filter-button-medium-down button-element togglable medium-button remove-margin-bottom hide-for-large ng-scope selected" data-ng-class="{'selected': isFilterActive()}" data-ng-click="toggleSidebar()" data-ng-if="hasFacetSearch()">
+                    <span class="icon-filter show-for-medium"></span>
+                    <span class="hide-for-medium-up ng-binding">Hide filters</span>
+                </button><!-- end ngIf: hasFacetSearch() -->
+                <!-- ngIf: hasFacetSearch() --><button class="search-bar-wrapper__filter-button filter-button-large-up button-element togglable medium-button remove-margin-bottom show-for-large ng-scope" aria-label="Hide filters" aria-pressed="false" data-ng-click="toggleSidebar()" data-ng-if="hasFacetSearch()">
+                    <span class="ng-binding">Hide filters</span>
+                </button><!-- end ngIf: hasFacetSearch() -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ngIf: hasActiveHierarchyFacet() --><div class="grid-x remove-padding-bottom margin-bottom-24 ng-scope" data-ng-class="{'show-for-medium': hideForSmartphonePortrait()}" data-ng-if="hasActiveHierarchyFacet()">
+        <div class="cell small-24">
+            <div class="grid-x collapse postfix-round remove-padding-bottom">
+                <div class="large-24 cell">
+                    <div class="grid-x remove-padding-bottom">
+                        <div class="cell large-24 no-pad-left search-catalogues-menu-wrapper" data-ng-show="loaded">
+                            <ul class="breadcrumbs catalogue-breadcrumb-wrapper no-pad-left">
+                                <!-- ngRepeat: folder in parentFolders --><li class="catalogue-breadcrumb-item ng-scope" data-ng-repeat="folder in parentFolders">
+                                    <!-- ngIf: !$last -->
+                                    <!-- ngIf: $last --><span data-ng-if="$last" class="catalogue-breadcrumb-item-last ng-binding ng-scope">
+                                                All catalogues (2)
+                                            </span><!-- end ngIf: $last -->
+                                </li><!-- end ngRepeat: folder in parentFolders -->
+                            </ul>
+                        </div>
+                        <div class="cell large-24 catalogue-list-wrapper no-pad-left no-pad-right" data-ng-class="showForMobileClass" data-ng-show="hasChildren()">
+                            <ul class="grid-x grid-padding-x medium-up-2 large-up-3 catalogue-ul-block">
+                                <!-- ngRepeat: child in getChildren() --><li data-ng-repeat="child in getChildren()" class="cell catalogue-list-item-wrapper ng-scope">
+                                    <a data-ng-href="#" data-ng-click="hierarchyEntrySelected(child)" class="catalogue-item-anchor" title="" href="#">
+                                                <span class="catalogue-list-item">
+                                                    <!-- ngIf: child.preferImageOnly() --><span data-ng-if="child.preferImageOnly()" class="ng-scope">
+                                                        <!-- ngIf: child.hasFolderImage() --><span data-ng-if="child.hasFolderImage()" class="catalogue-item-image-block ng-scope">
+                                                            <img data-ng-src="/ils/data/category/data/category/default.gif" class="catalogue-item-image" alt="" src="/ils/data/category/data/category/default.gif">
+                                                        </span><!-- end ngIf: child.hasFolderImage() -->
+                                                        <span class="catalogue-item-title ng-binding">
+                                                            
+                                                            (2)
+                                                        </span>
+                                                    </span><!-- end ngIf: child.preferImageOnly() -->
+                                                    <!-- ngIf: !child.preferImageOnly() -->
+                                                </span>
+                                    </a>
+                                </li><!-- end ngRepeat: child in getChildren() -->
+                            </ul>
+                            <div class="margin-bottom-12 margin-top-10 ng-hide" data-ng-show="isMoreButtonVisible()">
+                                <button id="loadNextFoldersBtn" class="button-element medium-button" data-ng-click="showMoreChildren()">
+                                    <span class="ng-binding">Show all catalogues</span>
+                                </button>
+                            </div>
+                            <div class="margin-bottom-12 margin-top-10 ng-hide" data-ng-show="isLessButtonVisible()">
+                                <button id="showLessFoldersBtn" class="button-element medium-button" data-ng-click="showLessChildren()">
+                                    <span class="ng-binding">Show fewer catalogues</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="cell small-24 show-for-small-only no-pad-left no-pad-right toggle-mobile-section-wrapper" data-ng-show="hasChildren()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- end ngIf: hasActiveHierarchyFacet() -->
+
+    <div class="search-controls-section">
+        <facet-search-summary loaded="loaded" class="search-controls-section__summary ng-isolate-scope"><div class="grid-x grid-margin-x remove-padding-bottom">
+    <div class="cell small-24">
+        <!-- ngIf: hasSearchSummary() --><imc-summary-bar data-ng-if="hasSearchSummary()" data-summaries="summaries" data-delete="clearFacetContent" data-delete-all="clearAll" result-count="numberOfSearchResults" loaded="loaded" class="ng-scope ng-isolate-scope"><span class="imc-filter-summary-bar">
+    <span aria-live="polite" style="display: block; opacity: 0; position: absolute; z-index: -1;">
+        <!-- ngIf: (loaded === undefined ? true : loaded) && (liveAriaText || genratedLiveAriaText) --><span data-ng-if="(loaded === undefined ? true : loaded) &amp;&amp; (liveAriaText || genratedLiveAriaText)" aria-atomic="true" class="ng-binding ng-scope">
+             2 results filtered by:Featured
+        </span><!-- end ngIf: (loaded === undefined ? true : loaded) && (liveAriaText || genratedLiveAriaText) -->
+    </span>
+    <!-- ngIf: loaded === undefined ? true : loaded --><span data-ng-if="loaded === undefined ? true : loaded" class="ng-scope">
+        <!-- ngIf: customSummaryBundle -->
+        <!-- ngIf: !customSummaryBundle --><span class="imc-filter-summary-bar__result-count ng-binding ng-scope" data-ng-if="!customSummaryBundle" aria-hidden="true">
+                2 results filtered by:
+        </span><!-- end ngIf: !customSummaryBundle -->
+        <!-- ngRepeat: item in summaries --><span data-ng-repeat="item in summaries" class="ng-scope">
+            <!-- ngIf: item.summaryText --><span data-ng-if="item.summaryText" class="ng-scope">
+                <!-- catalogue search only -->
+                <button class="imc-filter-summary-bar__item" title="Featured" ng-click="delete(item)">
+                        <span class="imc-filter-summary-bar__item__text ng-binding">
+                            Featured
+                        </span>
+                        <span class="imc-filter-summary-bar__item__close-icon icon icon--symbol-close-large icon--default-line-height"></span>
+                </button>
+            </span><!-- end ngIf: item.summaryText -->
+            <!-- ngRepeat: (key, option) in item.summary -->
+        </span><!-- end ngRepeat: item in summaries -->
+        <!-- ngIf: summaries.length > 0 --><button data-ng-click="deleteAll(summaries)" class="imc-filter-summary-bar__clear-all-link hide-for-print ng-binding ng-scope" data-ng-if="summaries.length &gt; 0">
+        Remove all
+    </button><!-- end ngIf: summaries.length > 0 -->
+    </span><!-- end ngIf: loaded === undefined ? true : loaded -->
+</span>
+</imc-summary-bar><!-- end ngIf: hasSearchSummary() -->
+    </div>
+</div></facet-search-summary>
+        <facet-sort-order class="search-controls-section__sort ng-isolate-scope"><!-- ngIf: facetService.allowManualSorting() -->
+</facet-sort-order>
+    </div>
+
+    <display-result><div class="grid-x grid-margin-x display-result">
+    <div class="cell small-24 large-6" data-ng-show="dynamicCatalogSearchConfig.showSidebar">
+        <advanced-search class="ng-isolate-scope"><div class="facet-quick-filters" role="listbox" aria-labelledby="quick_Filter_header"><div id="quick_Filter_header" class="facet-title ng-binding">Quick filters</div><facet-new-content quick="true" collapsed="false" class="ng-isolate-scope"><div data-ng-class="!quick ? 'simple-line margin-top-12' : ''" class="remove-margin facet-search facet-quick-filter remove-padding-bottom">
+    <div data-ng-show="!quick" class="title-text-2 ng-binding ng-hide">Latest</div>
+    <br data-ng-show="!quick" class="ng-hide">
+    <button data-ng-click="emitChangeState()" onclick="this.blur()" role="option" data-ng-class="facetValue ? 'selected' : ''" class="small-24 cell button-element togglable small-button" aria-labelledby="facetTitle-Latest" aria-selected="false" title="Latest">
+        <div id="facetTitle-Latest" class="facet-text-alignment ng-binding">Latest</div>
+    </button>
+</div>
+</facet-new-content><facet-top-content quick="true" collapsed="false" class="ng-isolate-scope"><div data-ng-class="!quick ? 'simple-line margin-top-12' : ''" class="remove-margin facet-search facet-quick-filter remove-padding-bottom">
+    <div data-ng-show="!quick" class="title-text-2 ng-binding ng-hide">Featured</div>
+    <br data-ng-show="!quick" class="ng-hide">
+    <button data-ng-click="emitChangeState()" onclick="this.blur()" role="option" data-ng-class="facetValue ? 'selected' : ''" class="small-24 cell button-element togglable small-button selected" aria-labelledby="facetTitle-Featured" aria-selected="true" title="Featured">
+        <div id="facetTitle-Featured" class="facet-text-alignment ng-binding">Featured</div>
+    </button>
+</div>
+</facet-top-content><facet-external-price-amount quick="true" collapsed="false" class="ng-isolate-scope"><div data-ng-class="!quick ? 'simple-line margin-top-12' : ''" class="remove-margin facet-search facet-quick-filter remove-padding-bottom">
+    <div data-ng-show="!quick" class="title-text-2 ng-binding ng-hide">Free</div>
+    <br data-ng-show="!quick" class="ng-hide">
+    <button data-ng-click="emitChangeState()" onclick="this.blur()" role="option" data-ng-class="facetValue ? 'selected' : ''" class="small-24 cell button-element togglable small-button" aria-labelledby="facetTitle-Free" aria-selected="false" title="Free">
+        <div id="facetTitle-Free" class="facet-text-alignment ng-binding">Free</div>
+    </button>
+</div>
+</facet-external-price-amount></div><facet-classifications root-id="114777" root-title="Course provider" collapsed="false" display-in-catalog="true" class="ng-isolate-scope"><!-- ngIf: facetService.displayInCatalog && facetService.hasItems() --><div class="simple-line facet-list facet-hierarchy margin-top-6 ng-scope" data-ng-if="facetService.displayInCatalog &amp;&amp; facetService.hasItems()">
+    <!-- ngIf: facetService.title --><div class="facet-title ng-scope" data-ng-if="facetService.title">
+        <div id="facet_hierarchy_header_Classification_0.025014988724507248" role="group" aria-label="Course provider Filter">
+            <span aria-hidden="true" class="ng-binding">Course provider</span>
+        </div>
+        <a href="#" data-ng-click="facetService.globalToggleExtended()" role="button" class="facet-expand-link" title="Show less" aria-label="Course provider Show less">
+            <span data-ng-class="facetService.globalShowMoreButton.icon" aria-hidden="true" class="icon-arrow-up"></span>
+        </a>
+    </div><!-- end ngIf: facetService.title -->
+    <!-- ngIf: !facetService.title -->
+
+    <!-- ngIf: !facetService.facetValue && !facetService.hideOptions --><div data-ng-if="!facetService.facetValue &amp;&amp; !facetService.hideOptions" data-ng-show="facetService.showGlobal()" class="ng-scope">
+        <!-- ngRepeat: value in facetService.optionList| objectLimitTo: facetService.showMoreLimit --><div data-ng-repeat="value in facetService.optionList| objectLimitTo: facetService.showMoreLimit" class="facet-list-item ng-scope" style="overflow: hidden;">
+            <a href="#" data-ng-click="facetService.check(value)" class="facet-child-link" title="ACCA (1)" style="white-space: nowrap">
+                <div class="facet-link-text ng-binding">
+<!--                    <span ng-bind-html="value.name | trustedHtmlFilter"></span>-->
+                    ACCA
+                    <span class="facet-count ng-binding">(1)</span>
+                </div>
+            </a>
+        </div><!-- end ngRepeat: value in facetService.optionList| objectLimitTo: facetService.showMoreLimit -->
+    </div><!-- end ngIf: !facetService.facetValue && !facetService.hideOptions -->
+    <!-- ngIf: facetService.facetValue -->
+    <a href="#" data-ng-click="facetService.toggleExtended()" role="button" data-ng-show="facetService.showGlobal() &amp;&amp; facetService.showMoreButton" class="facet-expand-link ng-hide" title="" aria-label="Course provider ">
+        <span class="facet-link-text ng-binding" aria-hidden="true"></span>
+        <span data-ng-class="facetService.showMoreButton.icon" aria-hidden="true"></span>
+    </a>
+    <!-- ngRepeat: button in facetService.buttons -->
+</div><!-- end ngIf: facetService.displayInCatalog && facetService.hasItems() -->
+</facet-classifications><facet-classifications root-id="110331" root-title="Topics" collapsed="false" display-in-catalog="true" class="ng-isolate-scope"><!-- ngIf: facetService.displayInCatalog && facetService.hasItems() --><div class="simple-line facet-list facet-hierarchy margin-top-6 ng-scope" data-ng-if="facetService.displayInCatalog &amp;&amp; facetService.hasItems()">
+    <!-- ngIf: facetService.title --><div class="facet-title ng-scope" data-ng-if="facetService.title">
+        <div id="facet_hierarchy_header_Classification_0.39040595308507364" role="group" aria-label="Topics Filter">
+            <span aria-hidden="true" class="ng-binding">Topics</span>
+        </div>
+        <a href="#" data-ng-click="facetService.globalToggleExtended()" role="button" class="facet-expand-link" title="Show less" aria-label="Topics Show less">
+            <span data-ng-class="facetService.globalShowMoreButton.icon" aria-hidden="true" class="icon-arrow-up"></span>
+        </a>
+    </div><!-- end ngIf: facetService.title -->
+    <!-- ngIf: !facetService.title -->
+
+    <!-- ngIf: !facetService.facetValue && !facetService.hideOptions --><div data-ng-if="!facetService.facetValue &amp;&amp; !facetService.hideOptions" data-ng-show="facetService.showGlobal()" class="ng-scope">
+        <!-- ngRepeat: value in facetService.optionList| objectLimitTo: facetService.showMoreLimit --><div data-ng-repeat="value in facetService.optionList| objectLimitTo: facetService.showMoreLimit" class="facet-list-item ng-scope" style="overflow: hidden;">
+            <a href="#" data-ng-click="facetService.check(value)" class="facet-child-link" title="Ethics (1)" style="white-space: nowrap">
+                <div class="facet-link-text ng-binding">
+<!--                    <span ng-bind-html="value.name | trustedHtmlFilter"></span>-->
+                    Ethics
+                    <span class="facet-count ng-binding">(1)</span>
+                </div>
+            </a>
+        </div><!-- end ngRepeat: value in facetService.optionList| objectLimitTo: facetService.showMoreLimit -->
+    </div><!-- end ngIf: !facetService.facetValue && !facetService.hideOptions -->
+    <!-- ngIf: facetService.facetValue -->
+    <a href="#" data-ng-click="facetService.toggleExtended()" role="button" data-ng-show="facetService.showGlobal() &amp;&amp; facetService.showMoreButton" class="facet-expand-link ng-hide" title="" aria-label="Topics ">
+        <span class="facet-link-text ng-binding" aria-hidden="true"></span>
+        <span data-ng-class="facetService.showMoreButton.icon" aria-hidden="true"></span>
+    </a>
+    <!-- ngRepeat: button in facetService.buttons -->
+</div><!-- end ngIf: facetService.displayInCatalog && facetService.hasItems() -->
+</facet-classifications></advanced-search>
+    </div>
+    <div class="cell small-24 large-18 result-wrapper margin-top-12" data-ng-class="{
+                    'large-18': dynamicCatalogSearchConfig.showSidebar,
+                    'large-24': !dynamicCatalogSearchConfig.showSidebar}">
+
+        <div class="catalogsearch-display-result-catalog-title ng-binding">
+            All catalogues
+        </div>
+
+        <!-- ngIf: catalogSearchAppConfig.displayMode === 'LIST' --><one-column-list-layout data="instantQuery.docs" container-type="CATALOG" data-ng-if="catalogSearchAppConfig.displayMode === 'LIST'" class="ng-scope ng-isolate-scope"><div class="grid-x grid-padding-y small-up-1">
+    <!-- ngRepeat: item in data --><div class="cell ng-scope" data-ng-repeat="item in data">
+        <one-column-list-item item="item" list-type="'one-column'" container-type="CATALOG" data-show-progress-icon="showProgressIcon" data-show-status-indication="showStatusIndication" multi-cols="false" image-as-circle="imageAsCircle" id="one-column-list-layout-item-cs_result_item_938913" class="ng-isolate-scope"><div class="imc-list-item " data-ng-class="{'imc-list-item--show-status-indication': showStatusIndication}">
+    <div class="imc-list-item__tile" data-ng-class="{'imc-list-item__tile--expanded': item.expanded}" title="Ethics and Professional Skills Module (EPSM)">
+        <!-- ngIf: !item.dynamicListItem --><div class="imc-list-item__tile__container ng-scope" data-ng-if="!item.dynamicListItem" data-ng-mousedown="dragStart = $event.pageX;" data-ng-attr-tabindex="{{ item.tabindex !== undefined ? item.tabindex : (item.smallButtons.length &gt; 0 ? -1 : 0 )}}" data-ng-click="(dragStart - $event.pageX &gt; -1) &amp;&amp; (dragStart - $event.pageX &lt; 1) ? item.onClick($event, item) : false" data-ng-keydown="onKeyDown($event, item)" data-ng-class="{
+                'imc-list-item__tile__container--multi-cols': multiCols,
+                'imc-list-item__tile__container--content-height': imageAsCircle,
+                'imc-list-item__tile--no-link': !item.onClick
+            }" tabindex="0">
+            <!-- ngIf: item.imageUrl || (item.typeIcon !== undefined && item.typeIcon !== '') || (item.providerName && item.providerLogoUrl) --><div class="imc-list-image  hide-for-print" data-ng-if="item.imageUrl || (item.typeIcon !== undefined &amp;&amp; item.typeIcon !== '') || (item.providerName &amp;&amp; item.providerLogoUrl)" data-ng-class="{
+                    'imc-list-image--expanded': item.expanded,
+                    'imc-list-image--icon':  item.typeIcon !== undefined &amp;&amp; item.typeIcon !== '',
+                    'imc-list-image--multi-cols': multiCols,
+                    'imc-list-image--circle': imageAsCircle
+                 }" data-ng-style="{'background-image': 'url(/ils/data/course/EPSM_1103316.png)'}" style="background-image: url(&quot;/ils/data/course/EPSM_1103316.png&quot;);">
+                <!-- ngIf: item.providerName && item.providerLogoUrl --><div class="imc-list-image__overlay ng-scope" data-ng-if="item.providerName &amp;&amp; item.providerLogoUrl">
+                    <img data-ng-src="/ils/data/organizer/160px_ACCA_logo_203325.png" class="imc-list-image__overlay__img" alt="ACCA" src="/ils/data/organizer/160px_ACCA_logo_203325.png">
+                </div><!-- end ngIf: item.providerName && item.providerLogoUrl -->
+
+                <!-- ngIf: showProgressCircularBar -->
+
+                <!-- ngIf: item.showRating && listType !== 'slider' -->
+                <div class="imc-list__flags">
+                    <!-- ngIf: item.updated -->
+                    <!-- ngIf: item.prerequistesObject && item.prerequistesObject.cssClass -->
+                </div>
+            </div><!-- end ngIf: item.imageUrl || (item.typeIcon !== undefined && item.typeIcon !== '') || (item.providerName && item.providerLogoUrl) -->
+            <!-- ngIf: showProgressIcon -->
+            <div class="imc-list-details">
+                <div class="imc-list-details__text-container" data-ng-class="{ 'imc-list-details__text-container--shrinked' : item.smallButtons.length &gt; 0 }">
+                    <div class="imc-list-title ng-binding" data-ng-bind-html="item.entryName | trustedHtmlFilter" data-ng-class="{
+                            'imc-list-title--alternative-line-clamp': alternativeLineClamp
+                         }">Ethics and Professional Skills Module (EPSM)</div>
+                    <!-- ngIf: item.preserveSpace || item.entrySubTitle -->
+                    <div class="imc-list-info">
+                        <!-- ngIf: item.selfEnrolmentInformation -->
+                        <!-- ngIf: item.timezoneUiData.objectTimeZone.fixedTimeZone && !item.timezoneUiData.objectTimeZone.userDefinedTimeZone -->
+                        <!-- ngIf: item.coveredUIData && item.coveredUIData.covered -->
+                        <!-- ngIf: item.metaDataLabels && item.metaDataLabels.length -->
+                        <div class="imc-list-info__subline" data-ng-class="{'imc-list-details__info__subline--highlighted' : item.dueDateInPast}">
+                            <div class="subline-text-wrapper">
+                                <!-- ngIf: item.subline && !item.sublineBundle --><span ng-if="item.subline &amp;&amp; !item.sublineBundle" class="ng-binding ng-scope">
+                                    Course access for an unlimited time
+                                </span><!-- end ngIf: item.subline && !item.sublineBundle -->
+                                <!-- ngIf: !item.subline && item.sublineBundle -->
+                                <!--snippet specific to european commission-->
+                                <!-- ngIf: item.languageCourseGrade -->
+                                <!--snippet specific to european commission-->
+                            </div>
+                            <!-- ngIf: metadataPositionDisplay === 'RIGHT_FROM_PROGRESS' && item.metaDatas.length -->
+                        </div>
+                    </div>
+
+                    <!-- ngIf: !showProgressCircularBar --><div class="imc-list-progress ng-scope" data-ng-if="!showProgressCircularBar">
+                        <!-- ngIf: item.progress !== undefined && item.progress !== null -->
+                    </div><!-- end ngIf: !showProgressCircularBar -->
+                    <!-- ngIf: metadataPositionDisplay !== 'RIGHT_FROM_PROGRESS' --><div class="imc-list-metadata ng-scope" data-ng-if="metadataPositionDisplay !== 'RIGHT_FROM_PROGRESS'">
+                        <div class="imc-list-metadata__main">
+                            <!-- ngRepeat: metaData in item.metaDatas | orderBy: 'position' --><span data-ng-repeat="metaData in item.metaDatas | orderBy: 'position'" class="ng-scope">
+                                <!-- ngIf: !isDropdownMetadata(metaData) --><div class="imc-list-metadata__main__item--5 imc-list-metadata__main__item imc-list-metadata__waiting-list " title="Waiting list places" data-ng-hide="metaData.hidden" meta-data="metaData" data-ng-if="!isDropdownMetadata(metaData)">
+    <!-- ICONS OR FLAG -->
+    <span>
+    <!-- ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass --><span data-ng-if="(!metaData.languageMetadata || metaData.showFlag) &amp;&amp; metaData.iconClass" title="Waiting list places" data-ng-class="metaData.iconClass" data-icon="" class="ng-scope icon icon--waiting-list icon--default-line-height">
+        <!-- ngIf: metaData.flag -->
+    </span><!-- end ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass -->
+    <!-- ngIf: metaData.icon && metaData.isCustomMetaTag -->
+</span>
+    <!-- CONTENT TEXT -->
+    <span class="imc-list-metadata__main__item__text" title="Waiting list places">
+      <!-- ngIf: metaData.text --><span data-ng-if="metaData.text" data-ng-bind-html="metaData.text | trustedHtmlFilter" class="imc-list-metadata__main__item__text__inner ng-binding ng-scope">Unlimited</span><!-- end ngIf: metaData.text -->
+      <!-- ngIf: metaData.textBundle -->
+    </span>
+</div><!-- end ngIf: !isDropdownMetadata(metaData) -->
+                                <!-- ngIf: metaData.isMultipleLanguagesCustomMetadata -->
+                                <!-- ngIf: isTagsMetatag(metaData) -->
+                            </span><!-- end ngRepeat: metaData in item.metaDatas | orderBy: 'position' --><span data-ng-repeat="metaData in item.metaDatas | orderBy: 'position'" class="ng-scope">
+                                <!-- ngIf: !isDropdownMetadata(metaData) --><div class="imc-list-metadata__main__item--5 imc-list-metadata__main__item imc-list-metadata__languages " title="Language" data-ng-hide="metaData.hidden" meta-data="metaData" data-ng-if="!isDropdownMetadata(metaData)">
+    <!-- ICONS OR FLAG -->
+    <span>
+    <!-- ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass -->
+    <!-- ngIf: metaData.icon && metaData.isCustomMetaTag -->
+</span>
+    <!-- CONTENT TEXT -->
+    <span class="imc-list-metadata__main__item__text" title="Language">
+      <!-- ngIf: metaData.text -->
+      <!-- ngIf: metaData.textBundle --><span data-ng-if="metaData.textBundle" class="imc-list-metadata__main__item__text__inner ng-binding ng-scope">English (GB)</span><!-- end ngIf: metaData.textBundle -->
+    </span>
+</div><!-- end ngIf: !isDropdownMetadata(metaData) -->
+                                <!-- ngIf: metaData.isMultipleLanguagesCustomMetadata -->
+                                <!-- ngIf: isTagsMetatag(metaData) -->
+                            </span><!-- end ngRepeat: metaData in item.metaDatas | orderBy: 'position' --><span data-ng-repeat="metaData in item.metaDatas | orderBy: 'position'" class="ng-scope">
+                                <!-- ngIf: !isDropdownMetadata(metaData) --><div class="imc-list-metadata__main__item--5 imc-list-metadata__main__item imc-list-metadata__price" title="Price" data-ng-hide="metaData.hidden" meta-data="metaData" data-ng-if="!isDropdownMetadata(metaData)">
+    <!-- ICONS OR FLAG -->
+    <span>
+    <!-- ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass --><span data-ng-if="(!metaData.languageMetadata || metaData.showFlag) &amp;&amp; metaData.iconClass" title="Price" data-ng-class="metaData.iconClass" data-icon="" class="ng-scope icon-book-course">
+        <!-- ngIf: metaData.flag -->
+    </span><!-- end ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass -->
+    <!-- ngIf: metaData.icon && metaData.isCustomMetaTag -->
+</span>
+    <!-- CONTENT TEXT -->
+    <span class="imc-list-metadata__main__item__text" title="Price">
+      <!-- ngIf: metaData.text --><span data-ng-if="metaData.text" data-ng-bind-html="metaData.text | trustedHtmlFilter" class="imc-list-metadata__main__item__text__inner ng-binding ng-scope">83.00 GBP</span><!-- end ngIf: metaData.text -->
+      <!-- ngIf: metaData.textBundle -->
+    </span>
+</div><!-- end ngIf: !isDropdownMetadata(metaData) -->
+                                <!-- ngIf: metaData.isMultipleLanguagesCustomMetadata -->
+                                <!-- ngIf: isTagsMetatag(metaData) -->
+                            </span><!-- end ngRepeat: metaData in item.metaDatas | orderBy: 'position' --><span data-ng-repeat="metaData in item.metaDatas | orderBy: 'position'" class="ng-scope">
+                                <!-- ngIf: !isDropdownMetadata(metaData) --><div class="imc-list-metadata__main__item--5 imc-list-metadata__main__item imc-list-metadata__course-content-learning-form " title="Learning mode" data-ng-hide="metaData.hidden" meta-data="metaData" data-ng-if="!isDropdownMetadata(metaData)">
+    <!-- ICONS OR FLAG -->
+    <span>
+    <!-- ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass --><span data-ng-if="(!metaData.languageMetadata || metaData.showFlag) &amp;&amp; metaData.iconClass" title="Learning mode" data-ng-class="metaData.iconClass" data-icon="" class="ng-scope icon-content-course">
+        <!-- ngIf: metaData.flag -->
+    </span><!-- end ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass -->
+    <!-- ngIf: metaData.icon && metaData.isCustomMetaTag -->
+</span>
+    <!-- CONTENT TEXT -->
+    <span class="imc-list-metadata__main__item__text" title="Learning mode">
+      <!-- ngIf: metaData.text --><span data-ng-if="metaData.text" data-ng-bind-html="metaData.text | trustedHtmlFilter" class="imc-list-metadata__main__item__text__inner ng-binding ng-scope">Online</span><!-- end ngIf: metaData.text -->
+      <!-- ngIf: metaData.textBundle -->
+    </span>
+</div><!-- end ngIf: !isDropdownMetadata(metaData) -->
+                                <!-- ngIf: metaData.isMultipleLanguagesCustomMetadata -->
+                                <!-- ngIf: isTagsMetatag(metaData) -->
+                            </span><!-- end ngRepeat: metaData in item.metaDatas | orderBy: 'position' --><span data-ng-repeat="metaData in item.metaDatas | orderBy: 'position'" class="ng-scope">
+                                <!-- ngIf: !isDropdownMetadata(metaData) --><div class="imc-list-metadata__main__item--5 imc-list-metadata__main__item imc-list-metadata__location " title="Location" data-ng-hide="metaData.hidden" meta-data="metaData" data-ng-if="!isDropdownMetadata(metaData)">
+    <!-- ICONS OR FLAG -->
+    <span>
+    <!-- ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass --><span data-ng-if="(!metaData.languageMetadata || metaData.showFlag) &amp;&amp; metaData.iconClass" title="Location" data-ng-class="metaData.iconClass" data-icon="" class="ng-scope icon-location">
+        <!-- ngIf: metaData.flag -->
+    </span><!-- end ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass -->
+    <!-- ngIf: metaData.icon && metaData.isCustomMetaTag -->
+</span>
+    <!-- CONTENT TEXT -->
+    <span class="imc-list-metadata__main__item__text" title="Location">
+      <!-- ngIf: metaData.text --><span data-ng-if="metaData.text" data-ng-bind-html="metaData.text | trustedHtmlFilter" class="imc-list-metadata__main__item__text__inner ng-binding ng-scope">Online</span><!-- end ngIf: metaData.text -->
+      <!-- ngIf: metaData.textBundle -->
+    </span>
+</div><!-- end ngIf: !isDropdownMetadata(metaData) -->
+                                <!-- ngIf: metaData.isMultipleLanguagesCustomMetadata -->
+                                <!-- ngIf: isTagsMetatag(metaData) -->
+                            </span><!-- end ngRepeat: metaData in item.metaDatas | orderBy: 'position' -->
+                        </div>
+                    </div><!-- end ngIf: metadataPositionDisplay !== 'RIGHT_FROM_PROGRESS' -->
+                </div>
+            </div>
+        </div><!-- end ngIf: !item.dynamicListItem -->
+
+
+        <!-- ngIf: item.dynamicListItem -->
+        <div class="imc-list-button-container">
+            <!-- ngIf: item.smallButtons.length > 0 -->
+        </div>
+    </div>
+    <!-- ngIf: item.expanded -->
+    <!-- ngIf: item.reveal -->
+</div>
+</one-column-list-item>
+    </div><!-- end ngRepeat: item in data --><div class="cell ng-scope" data-ng-repeat="item in data">
+        <one-column-list-item item="item" list-type="'one-column'" container-type="CATALOG" data-show-progress-icon="showProgressIcon" data-show-status-indication="showStatusIndication" multi-cols="false" image-as-circle="imageAsCircle" id="one-column-list-layout-item-cs_result_item_938983" class="ng-isolate-scope"><div class="imc-list-item " data-ng-class="{'imc-list-item--show-status-indication': showStatusIndication}">
+    <div class="imc-list-item__tile" data-ng-class="{'imc-list-item__tile--expanded': item.expanded}" title="Foundations in Professionalism (FIP)">
+        <!-- ngIf: !item.dynamicListItem --><div class="imc-list-item__tile__container ng-scope" data-ng-if="!item.dynamicListItem" data-ng-mousedown="dragStart = $event.pageX;" data-ng-attr-tabindex="{{ item.tabindex !== undefined ? item.tabindex : (item.smallButtons.length &gt; 0 ? -1 : 0 )}}" data-ng-click="(dragStart - $event.pageX &gt; -1) &amp;&amp; (dragStart - $event.pageX &lt; 1) ? item.onClick($event, item) : false" data-ng-keydown="onKeyDown($event, item)" data-ng-class="{
+                'imc-list-item__tile__container--multi-cols': multiCols,
+                'imc-list-item__tile__container--content-height': imageAsCircle,
+                'imc-list-item__tile--no-link': !item.onClick
+            }" tabindex="0">
+            <!-- ngIf: item.imageUrl || (item.typeIcon !== undefined && item.typeIcon !== '') || (item.providerName && item.providerLogoUrl) --><div class="imc-list-image  hide-for-print" data-ng-if="item.imageUrl || (item.typeIcon !== undefined &amp;&amp; item.typeIcon !== '') || (item.providerName &amp;&amp; item.providerLogoUrl)" data-ng-class="{
+                    'imc-list-image--expanded': item.expanded,
+                    'imc-list-image--icon':  item.typeIcon !== undefined &amp;&amp; item.typeIcon !== '',
+                    'imc-list-image--multi-cols': multiCols,
+                    'imc-list-image--circle': imageAsCircle
+                 }" data-ng-style="{'background-image': 'url(/ils/data/course/EPSM_1109758.png)'}" style="background-image: url(&quot;/ils/data/course/EPSM_1109758.png&quot;);">
+                <!-- ngIf: item.providerName && item.providerLogoUrl --><div class="imc-list-image__overlay ng-scope" data-ng-if="item.providerName &amp;&amp; item.providerLogoUrl">
+                    <img data-ng-src="/ils/data/organizer/160px_ACCA_logo_203325.png" class="imc-list-image__overlay__img" alt="ACCA" src="/ils/data/organizer/160px_ACCA_logo_203325.png">
+                </div><!-- end ngIf: item.providerName && item.providerLogoUrl -->
+
+                <!-- ngIf: showProgressCircularBar -->
+
+                <!-- ngIf: item.showRating && listType !== 'slider' -->
+                <div class="imc-list__flags">
+                    <!-- ngIf: item.updated -->
+                    <!-- ngIf: item.prerequistesObject && item.prerequistesObject.cssClass -->
+                </div>
+            </div><!-- end ngIf: item.imageUrl || (item.typeIcon !== undefined && item.typeIcon !== '') || (item.providerName && item.providerLogoUrl) -->
+            <!-- ngIf: showProgressIcon -->
+            <div class="imc-list-details">
+                <div class="imc-list-details__text-container" data-ng-class="{ 'imc-list-details__text-container--shrinked' : item.smallButtons.length &gt; 0 }">
+                    <div class="imc-list-title ng-binding" data-ng-bind-html="item.entryName | trustedHtmlFilter" data-ng-class="{
+                            'imc-list-title--alternative-line-clamp': alternativeLineClamp
+                         }">Foundations in Professionalism (FIP)</div>
+                    <!-- ngIf: item.preserveSpace || item.entrySubTitle -->
+                    <div class="imc-list-info">
+                        <!-- ngIf: item.selfEnrolmentInformation -->
+                        <!-- ngIf: item.timezoneUiData.objectTimeZone.fixedTimeZone && !item.timezoneUiData.objectTimeZone.userDefinedTimeZone -->
+                        <!-- ngIf: item.coveredUIData && item.coveredUIData.covered -->
+                        <!-- ngIf: item.metaDataLabels && item.metaDataLabels.length -->
+                        <div class="imc-list-info__subline" data-ng-class="{'imc-list-details__info__subline--highlighted' : item.dueDateInPast}">
+                            <div class="subline-text-wrapper">
+                                <!-- ngIf: item.subline && !item.sublineBundle --><span ng-if="item.subline &amp;&amp; !item.sublineBundle" class="ng-binding ng-scope">
+                                    Course access for an unlimited time
+                                </span><!-- end ngIf: item.subline && !item.sublineBundle -->
+                                <!-- ngIf: !item.subline && item.sublineBundle -->
+                                <!--snippet specific to european commission-->
+                                <!-- ngIf: item.languageCourseGrade -->
+                                <!--snippet specific to european commission-->
+                            </div>
+                            <!-- ngIf: metadataPositionDisplay === 'RIGHT_FROM_PROGRESS' && item.metaDatas.length -->
+                        </div>
+                    </div>
+
+                    <!-- ngIf: !showProgressCircularBar --><div class="imc-list-progress ng-scope" data-ng-if="!showProgressCircularBar">
+                        <!-- ngIf: item.progress !== undefined && item.progress !== null -->
+                    </div><!-- end ngIf: !showProgressCircularBar -->
+                    <!-- ngIf: metadataPositionDisplay !== 'RIGHT_FROM_PROGRESS' --><div class="imc-list-metadata ng-scope" data-ng-if="metadataPositionDisplay !== 'RIGHT_FROM_PROGRESS'">
+                        <div class="imc-list-metadata__main">
+                            <!-- ngRepeat: metaData in item.metaDatas | orderBy: 'position' --><span data-ng-repeat="metaData in item.metaDatas | orderBy: 'position'" class="ng-scope">
+                                <!-- ngIf: !isDropdownMetadata(metaData) --><div class="imc-list-metadata__main__item--4 imc-list-metadata__main__item imc-list-metadata__waiting-list " title="Waiting list places" data-ng-hide="metaData.hidden" meta-data="metaData" data-ng-if="!isDropdownMetadata(metaData)">
+    <!-- ICONS OR FLAG -->
+    <span>
+    <!-- ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass --><span data-ng-if="(!metaData.languageMetadata || metaData.showFlag) &amp;&amp; metaData.iconClass" title="Waiting list places" data-ng-class="metaData.iconClass" data-icon="" class="ng-scope icon icon--waiting-list icon--default-line-height">
+        <!-- ngIf: metaData.flag -->
+    </span><!-- end ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass -->
+    <!-- ngIf: metaData.icon && metaData.isCustomMetaTag -->
+</span>
+    <!-- CONTENT TEXT -->
+    <span class="imc-list-metadata__main__item__text" title="Waiting list places">
+      <!-- ngIf: metaData.text --><span data-ng-if="metaData.text" data-ng-bind-html="metaData.text | trustedHtmlFilter" class="imc-list-metadata__main__item__text__inner ng-binding ng-scope">Unlimited</span><!-- end ngIf: metaData.text -->
+      <!-- ngIf: metaData.textBundle -->
+    </span>
+</div><!-- end ngIf: !isDropdownMetadata(metaData) -->
+                                <!-- ngIf: metaData.isMultipleLanguagesCustomMetadata -->
+                                <!-- ngIf: isTagsMetatag(metaData) -->
+                            </span><!-- end ngRepeat: metaData in item.metaDatas | orderBy: 'position' --><span data-ng-repeat="metaData in item.metaDatas | orderBy: 'position'" class="ng-scope">
+                                <!-- ngIf: !isDropdownMetadata(metaData) --><div class="imc-list-metadata__main__item--4 imc-list-metadata__main__item imc-list-metadata__languages " title="Language" data-ng-hide="metaData.hidden" meta-data="metaData" data-ng-if="!isDropdownMetadata(metaData)">
+    <!-- ICONS OR FLAG -->
+    <span>
+    <!-- ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass -->
+    <!-- ngIf: metaData.icon && metaData.isCustomMetaTag -->
+</span>
+    <!-- CONTENT TEXT -->
+    <span class="imc-list-metadata__main__item__text" title="Language">
+      <!-- ngIf: metaData.text -->
+      <!-- ngIf: metaData.textBundle --><span data-ng-if="metaData.textBundle" class="imc-list-metadata__main__item__text__inner ng-binding ng-scope">English (GB)</span><!-- end ngIf: metaData.textBundle -->
+    </span>
+</div><!-- end ngIf: !isDropdownMetadata(metaData) -->
+                                <!-- ngIf: metaData.isMultipleLanguagesCustomMetadata -->
+                                <!-- ngIf: isTagsMetatag(metaData) -->
+                            </span><!-- end ngRepeat: metaData in item.metaDatas | orderBy: 'position' --><span data-ng-repeat="metaData in item.metaDatas | orderBy: 'position'" class="ng-scope">
+                                <!-- ngIf: !isDropdownMetadata(metaData) --><div class="imc-list-metadata__main__item--4 imc-list-metadata__main__item imc-list-metadata__price" title="Price" data-ng-hide="metaData.hidden" meta-data="metaData" data-ng-if="!isDropdownMetadata(metaData)">
+    <!-- ICONS OR FLAG -->
+    <span>
+    <!-- ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass --><span data-ng-if="(!metaData.languageMetadata || metaData.showFlag) &amp;&amp; metaData.iconClass" title="Price" data-ng-class="metaData.iconClass" data-icon="" class="ng-scope icon-book-course">
+        <!-- ngIf: metaData.flag -->
+    </span><!-- end ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass -->
+    <!-- ngIf: metaData.icon && metaData.isCustomMetaTag -->
+</span>
+    <!-- CONTENT TEXT -->
+    <span class="imc-list-metadata__main__item__text" title="Price">
+      <!-- ngIf: metaData.text --><span data-ng-if="metaData.text" data-ng-bind-html="metaData.text | trustedHtmlFilter" class="imc-list-metadata__main__item__text__inner ng-binding ng-scope">Free of charge</span><!-- end ngIf: metaData.text -->
+      <!-- ngIf: metaData.textBundle -->
+    </span>
+</div><!-- end ngIf: !isDropdownMetadata(metaData) -->
+                                <!-- ngIf: metaData.isMultipleLanguagesCustomMetadata -->
+                                <!-- ngIf: isTagsMetatag(metaData) -->
+                            </span><!-- end ngRepeat: metaData in item.metaDatas | orderBy: 'position' --><span data-ng-repeat="metaData in item.metaDatas | orderBy: 'position'" class="ng-scope">
+                                <!-- ngIf: !isDropdownMetadata(metaData) --><div class="imc-list-metadata__main__item--4 imc-list-metadata__main__item imc-list-metadata__course-content-learning-form " title="Learning mode" data-ng-hide="metaData.hidden" meta-data="metaData" data-ng-if="!isDropdownMetadata(metaData)">
+    <!-- ICONS OR FLAG -->
+    <span>
+    <!-- ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass --><span data-ng-if="(!metaData.languageMetadata || metaData.showFlag) &amp;&amp; metaData.iconClass" title="Learning mode" data-ng-class="metaData.iconClass" data-icon="" class="ng-scope icon-content-course">
+        <!-- ngIf: metaData.flag -->
+    </span><!-- end ngIf: (!metaData.languageMetadata || metaData.showFlag) && metaData.iconClass -->
+    <!-- ngIf: metaData.icon && metaData.isCustomMetaTag -->
+</span>
+    <!-- CONTENT TEXT -->
+    <span class="imc-list-metadata__main__item__text" title="Learning mode">
+      <!-- ngIf: metaData.text --><span data-ng-if="metaData.text" data-ng-bind-html="metaData.text | trustedHtmlFilter" class="imc-list-metadata__main__item__text__inner ng-binding ng-scope">Online</span><!-- end ngIf: metaData.text -->
+      <!-- ngIf: metaData.textBundle -->
+    </span>
+</div><!-- end ngIf: !isDropdownMetadata(metaData) -->
+                                <!-- ngIf: metaData.isMultipleLanguagesCustomMetadata -->
+                                <!-- ngIf: isTagsMetatag(metaData) -->
+                            </span><!-- end ngRepeat: metaData in item.metaDatas | orderBy: 'position' -->
+                        </div>
+                    </div><!-- end ngIf: metadataPositionDisplay !== 'RIGHT_FROM_PROGRESS' -->
+                </div>
+            </div>
+        </div><!-- end ngIf: !item.dynamicListItem -->
+
+
+        <!-- ngIf: item.dynamicListItem -->
+        <div class="imc-list-button-container">
+            <!-- ngIf: item.smallButtons.length > 0 -->
+        </div>
+    </div>
+    <!-- ngIf: item.expanded -->
+    <!-- ngIf: item.reveal -->
+</div>
+</one-column-list-item>
+    </div><!-- end ngRepeat: item in data -->
+</div>
+</one-column-list-layout><!-- end ngIf: catalogSearchAppConfig.displayMode === 'LIST' -->
+        <!-- ngIf: catalogSearchAppConfig.displayMode === 'THREE_PER_ROW' -->
+        <!-- ngIf: catalogSearchAppConfig.displayMode === 'SLIDE' -->
+
+        <!-- ngIf: !loaded -->
+        <div aria-live="polite">
+            <!-- ngIf: queryLoadedWithoutResults() -->
+        </div>
+        <!-- ngIf: hasMore -->
+    </div>
+</div>
+
+</display-result>
+</section>
+</catalog-search-content>
+
+    <!--
+    additionalClass can be set using
+            <ui:include src="snippets/loadingindicator.xhtml">
+                <ui:param name="additionalClass" value="subfloat-menu-padding" />
+            </ui:include>
+     -->
+    <div id="mainloadingindicator" class="spinner-loading-wrapper " role="alert" aria-live="polite" aria-label="Loading">
+        <div class="spinner-item"></div>
+        <div class="spinner-item"></div>
+        <div class="spinner-item"></div>
+        <div class="spinner-item"></div>
+        <div class="spinner-item"></div>
+        <div class="spinner-item"></div>
+        <div class="spinner-item"></div>
+        <div class="spinner-item"></div>
+        <div class="spinner-item"></div>
+    </div>
+        </div>
+        <script>embedJavascriptResources([ 
+{ 'identifier':'angular' },
+{ 'identifier':'angular-translate' },
+{ 'identifier':'angular-resource' },
+{ 'identifier':'translateIMCCustomLoaderService' },
+{ 'identifier':'angular-translate-imc-loader' },
+{ 'identifier':'angular-translate-imc-decorator' },
+{ 'identifier':'imc-loading-spinner' },
+{ 'identifier':'ui-bootstrap-tpls' },
+{ 'identifier':'angularjs-filters' },
+{ 'identifier':'no-content-screen' },
+{ 'identifier':'imc-main-type-id-map' },
+{ 'identifier':'lodash' },
+{ 'identifier':'imc-solr-module' },
+{ 'identifier':'solrDocumentReader' },
+{ 'identifier':'imageUrlService' },
+{ 'identifier':'searchParamAccessService' },
+{ 'identifier':'solrSortParamUpdateService' },
+{ 'identifier':'solrSearchService' },
+{ 'identifier':'solrCatalogService' },
+{ 'identifier':'moment' },
+{ 'identifier':'moment-timezone-with-data' },
+{ 'identifier':'imc-progressbar-module' },
+{ 'identifier':'imc-horizontal-progressbar' },
+{ 'identifier':'imc-horizontal-progressbar-service' },
+{ 'identifier':'imc-languages.module' },
+{ 'identifier':'imc-tags.module' },
+{ 'identifier':'angular-slick' },
+{ 'identifier':'slick' },
+{ 'identifier':'sliderService' },
+{ 'identifier':'imc-list-layout-module' },
+{ 'identifier':'imc-list-layout' },
+{ 'identifier':'imc-course-module' },
+{ 'identifier':'imc-templating-module' },
+{ 'identifier':'imc-programme-module' },
+{ 'identifier':'imc-datepicker' },
+{ 'identifier':'imc-search-bar' },
+{ 'identifier':'imc-summary-bar' },
+{ 'identifier':'imc-action-reveal' },
+{ 'identifier':'angular-sanitize' },
+{ 'identifier':'imc-sanitize' },
+{ 'identifier':'imc-rating-module' },
+{ 'identifier':'imc-rating-box-data-service' },
+{ 'identifier':'imc-rating-box-context-factory-service' },
+{ 'identifier':'imc-rating-box-data-transformer-service' },
+{ 'identifier':'imc-rating-row' },
+{ 'identifier':'imc-rating-box' },
+{ 'identifier':'imc-rating-box-reveal' },
+{ 'identifier':'imc-stars' },
+{ 'identifier':'imc-filter' },
+{ 'identifier':'imc-skill-module' },
+{ 'identifier':'imc-skill-info' },
+{ 'identifier':'imc-skill-info-item' },
+{ 'identifier':'imc-skill-info-item-controller' },
+{ 'identifier':'imc-skill-info-controller' },
+{ 'identifier':'imc-skill-transformer-service' },
+{ 'identifier':'imc-skill-level-details' },
+{ 'identifier':'imc-skill-levels-controller' },
+{ 'identifier':'imc-skill-levels' },
+{ 'identifier':'imc-skill-gap-service' },
+{ 'identifier':'imc-certification-module' },
+{ 'identifier':'imc-certification-assignment-transformer-service' },
+{ 'identifier':'imc-image-formatter-service' },
+{ 'identifier':'imc-directive-generator' },
+{ 'identifier':'imc-user-module' },
+{ 'identifier':'imc-user-service' },
+{ 'identifier':'imc-user-context' },{ 'identifier':'imc-user-context-service' },
+{ 'identifier':'imc-header.module'},
+{ 'identifier':'imc-subnavigation-header' },{ 'identifier':'imc-subnavigation-breadcrumbs' },{ 'identifier':'imc-subnavigation-header-service' },
+{ 'identifier':'imc-icondropdown' },
+{ 'identifier':'imc-timezone-module' },
+{ 'identifier':'imc-timezone-service' },
+{ 'identifier':'imc-timezone-info' },
+{ 'identifier':'imc-circular-progress' },
+{ 'path': catalogSearchAppConfig.appPath + 'js_vendor_min/app.dd08dc8e04.min.js'} ], function() {
+      angular.bootstrap(document.getElementById('catalogSearchContentWrapper'), ['catalogSearchApp']);}
+);</script>
+                        </div>
+                    </main>
+
+    <!-- FOOTER BEGIN -->
+    <div class="footer-section hide-for-print">
+        <div class="">
+            <imc-footer data-personal="true" data-language="en-GB" data-client-id="1" data-design-client-id="1" data-rest-url="/ilp/restapi" data-content-url="/ils" data-log-level="INFO" _nghost-ypq-c2="" ng-version="7.2.15"><!----><footer _ngcontent-ypq-c2="" class="uk-navbar-container imc-navigation-footer imc-navigation-footer--ready"><ul _ngcontent-ypq-c2="" class="uk-navbar-nav imc-navigation-footer__list"><!----><li _ngcontent-ypq-c2="" class="imc-navigation-footer__list__entry"><!----><!----><!----><span _ngcontent-ypq-c2="" class="imc-navigation-footer__list__entry__content" tabindex="0" title="Copyright © ACCA 2024. All rights reserved"><!----><!----><span _ngcontent-ypq-c2="" class="imc-navigation-footer__list__entry__content__text">Copyright © ACCA 2024. All rights reserved</span></span></li><li _ngcontent-ypq-c2="" class="imc-navigation-footer__list__entry"><!----><!----><a _ngcontent-ypq-c2="" tabindex="0" href="https://www.accaglobal.com" id="acca_global" title="ACCA Global" class="imc-navigation-footer__list__entry__content " target="_self"><!----><!----><span _ngcontent-ypq-c2="" class="imc-navigation-footer__list__entry__content__text">ACCA Global</span></a><!----></li><li _ngcontent-ypq-c2="" class="imc-navigation-footer__list__entry"><!----><!----><a _ngcontent-ypq-c2="" tabindex="0" href="https://www.accaglobal.com/gb/en/footertoolbar/privacy/acca-website-privacy-promise.html " id="acca_privacy_policy" title="ACCA Privacy Policy  " class="imc-navigation-footer__list__entry__content " target="_self"><!----><!----><span _ngcontent-ypq-c2="" class="imc-navigation-footer__list__entry__content__text">ACCA Privacy Policy  </span></a><!----></li><li _ngcontent-ypq-c2="" class="imc-navigation-footer__list__entry"><!----><!----><a _ngcontent-ypq-c2="" tabindex="0" href="https://www.accaglobal.com/gb/en/footer-toolbar/contact-us.html" id="contact_us" title="Contact us" class="imc-navigation-footer__list__entry__content " target="_self"><!----><!----><span _ngcontent-ypq-c2="" class="imc-navigation-footer__list__entry__content__text">Contact us</span></a><!----></li><li _ngcontent-ypq-c2="" class="imc-navigation-footer__list__entry"><!----><!----><a _ngcontent-ypq-c2="" tabindex="0" href="/ilp/pages/internal-dashboard.jsf?menuId=110829#/?dashboardId=110822" id="faq" title="FAQ" class="imc-navigation-footer__list__entry__content " target="_self"><!----><!----><span _ngcontent-ypq-c2="" class="imc-navigation-footer__list__entry__content__text">FAQ</span></a><!----></li></ul></footer></imc-footer>
+        </div>
+    </div>
+    <!-- FOOTER END -->
+                    <div id="announcementsModalRoot"><div class="sc-aXZVg chSsRe ThemeGlobal"></div></div>
+            </div>
+            <script src="/ilp/resources/javascript/custom_scripts.js"></script>
+            
+            <script>
+                $(document).foundation();
+                $(function () {
+                    if (!Foundation.MediaQuery.atLeast("large")) {
+                        $(".is-dropdown-submenu-parent").removeClass("is-dropdown-submenu-parent");
+                    }
+                });
+            </script>
+		<script>
+	var analyticsScript = document.createElement("script");
+	analyticsScript.setAttribute("src","//assets.adobedtm.com/launch-EN4c8bea9d45114431a8bc35a4ce50e9d9.min.js");
+	analyticsScript.setAttribute("async", true);
+
+	document.head.appendChild(analyticsScript);
+</script>
+
+<script>
+
+//remove FAQ
+//var faq_footer = document.getElementById("faq");
+//var studentResources_footer = document.getElementById("student_study_resources");
+var user_type_value;
+var isLoggedIn = 0;
+var BASE_URL = window.location.origin + '/' + window.location.pathname.split('/')[1];
+var application = window.location.pathname.split('/')[1];
+var REQUEST_HEADERS = {};
+var CONTENT_TYPE = "application/json";
+var DATA_TYPE = "JSON";
+
+function getUserData() {
+	if (application == "ilp"){
+    $.ajax({
+        type: "GET",
+        url: BASE_URL + "/userprofileapi/lms/v2/profilepage/myprofile?language=en-gb&wt=json", 
+        contentType: CONTENT_TYPE,
+        headers: REQUEST_HEADERS,
+        dataType: DATA_TYPE,
+        success: function(data) {
+          isLoggedIn = 1; 
+          //alert("user logged in =" + isLoggedIn)
+          transformData(data);
+        },
+        error: function(data) {
+          //User in not logged in
+          isLoggedIn = 0;
+             //alert("user logged in =" + isLoggedIn)
+             removeFooterExternal();
+              }
+    });
+  }
+}
+//Function to find membership type
+function transformData(data) {
+		//alert("user logged in")
+      var NumAttributes = data.profileCategoryList[0].attributes.length;
+      for (i=0; i<NumAttributes; i++){
+          var attribute_id = data.profileCategoryList[0].attributes[i].id
+            if(attribute_id == "ACCA_MEMBERSHIP_TYPE"){
+              user_type_value = data.profileCategoryList[0].attributes[i].value.value;
+          }
+        }
+
+  			if(user_type_value.includes("Student")){
+           //do nothing
+           }else{
+              removeFooterInternal();
+           }
+}
+
+//If not logged in, remove the following footer links
+function removeFooterExternal(){
+  var checkFooterExist = setInterval(function() {
+    //if ($('#faq').length && $('#student_study_resources').length) {
+	if ($('#student_study_resources').length) {
+      //$('#faq').remove();
+      $('#student_study_resources').remove();
+    clearInterval(checkFooterExist);
+  }}, 100);
+}
+
+//If logged in, remove the following footer links
+function removeFooterInternal(){
+  var checkFooterExist = setInterval(function() {
+    if ($('#student_study_resources').length) {
+     $('#student_study_resources').remove();
+    clearInterval(checkFooterExist);
+  }}, 100);
+}
+//This function check if the user is logged in or NOT
+//getUserData();
+//Checks if user is a student
+</script>
+
+<script>
+
+//MS-16351: [ACCA-EPSM] HTML injection to control redirects, from the master system, to China or GLOBAL
+//Fixed values
+
+var euSystem = "learning.ethics.accaglobal.com";
+var chinaSystem = "learning.ethics.accaglobal.cn";
+var euSystem_stage = "learning.ethics.stage.accaglobal.com";
+var chinaSystem_stage = "learning.ethics.stage.accaglobal.cn";
+
+var cName = "userLocation";
+var exdays = 360;//number of days for cookie validity
+var redirectionMsg= "You are being redirected. Please wait...";
+var chooseCountryMsg= "To ensure that we provide the best online customer experience possible and direct you to the relevant ACCA Learning site, please select from the following options based on your location:";
+var Option0 = "Select your location";
+var Option1 = "Canada";
+var Option2 = "Ireland";
+var Option3 = "Chinese mainland";
+var Option4 = "Malaysia";
+var Option5 = "Singapore";
+var Option6 = "United Kingdom";
+var Option7 = "United States of America";
+var Option8 = "Rest of the world";
+
+//variable and system valuesvalues
+var cValue;
+var currentSytem;
+var loginStatus;
+var BASE_URL = window.location.origin + '/' + window.location.pathname.split('/')[0];
+var REQUEST_HEADERS = {};
+var CONTENT_TYPE = "application/json";
+var DATA_TYPE = "JSON";
+
+function getLoginStatus() {
+    $.ajax({
+        type: "GET",
+        url: BASE_URL + "ilp/restapi/lms/users/@self",
+        contentType: CONTENT_TYPE,
+        headers: REQUEST_HEADERS,
+        dataType: DATA_TYPE,
+        success: function(data) {
+ 
+			//alert(loginStatus)
+          //do nothing
+		  getSystem();
+        },
+        error: function(data) {
+
+				loginStatus="false";
+          //check system
+          getSystem();
+        }
+    });
+}
+
+function setCookie(cvalue) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cName + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+function getSystem(){
+
+  currentSytem = window.location.hostname;
+  console.log(getCookie(cName));
+  
+  //alert(currentSytem);
+  //If EU PROD
+  if (currentSytem == euSystem){
+	
+    //check Cookie
+    if (getCookie(cName) == ""){
+      	//ask user for location
+        askUserLocation();      	
+        }else{
+          //alert("cookie exist"+ getCookie(cName));
+          switch (getCookie(cName)) {
+            case "China":
+			//alert("gotoCNPROD");
+              goTo("china_prod");
+              break;
+            default:
+              //alert("do nothing")
+           }
+      }
+  }
+  if (currentSytem == euSystem_stage){
+    //check Cookie
+    if (getCookie(cName) == ""){
+		//alert("EU STAGE - pop-uup");
+      	//ask user for location
+        askUserLocation();      	
+        }else{
+          //alert("cookie exist"+ getCookie(cName));
+          switch (getCookie(cName)) {
+            case "China":
+			//alert("gotoCNPROD");
+              goTo("china_stage");
+			  console.log("going to China Stage");
+              break;
+            default:
+              //alert("do nothing")
+           }
+      }
+  }
+}
+
+function askUserLocation(){
+  //alert("cookie does not exist");
+  showPopUp();
+}
+
+//Modal box
+function createPopup() {
+
+var div1 = document.createElement("div");
+div1.setAttribute("id","id01");
+div1.setAttribute("style","z-index:9999");
+div1.setAttribute("class","modal");
+
+var div2 = document.createElement("div");
+div2.setAttribute("class","modal-content");
+
+var div3 = document.createElement("div");
+div3.setAttribute("class","container");
+
+var h2 = document.createElement("p");
+h2.setAttribute("id","pop_up_msg");
+h2.innerHTML= chooseCountryMsg;
+
+<!--end of buttons->
+<!-- selection lists-->
+var selectList = document.createElement("select");
+selectList.setAttribute("name","Country selection");
+selectList.setAttribute("id","CountrySelect");
+selectList.innerHTML= "Pick a country";
+
+var option0 = document.createElement("option");
+var option1 = document.createElement("option");
+var option2 = document.createElement("option");
+var option3 = document.createElement("option");
+var option4 = document.createElement("option");
+var option5 = document.createElement("option");
+var option6 = document.createElement("option");
+var option7 = document.createElement("option");
+var option8 = document.createElement("option");
+var option9 = document.createElement("option");
+
+var submit = document.createElement("button");
+submit.setAttribute("id","Go");
+submit.setAttribute("onclick","selectCountry()");
+submit.setAttribute("class","cell button-element togglable small-button");
+submit.innerHTML = "Go";
+
+option0.setAttribute("option",Option0);
+option0.setAttribute("id",Option0);
+option0.setAttribute("disabled","");
+option0.setAttribute("selected","");
+option0.setAttribute("value","");
+option0.innerHTML = Option0;
+
+option1.setAttribute("value",Option1);
+option1.setAttribute("id",Option1);
+option1.innerHTML = Option1;
+
+option2.setAttribute("value",Option2);
+option2.setAttribute("id",Option2);
+option2.innerHTML = Option2;
+
+option3.setAttribute("value",Option3);
+option3.setAttribute("id",Option3);
+option3.innerHTML = Option3;
+
+option4.setAttribute("value",Option4);
+option4.setAttribute("id",Option4);
+option4.innerHTML = Option4;
+
+option5.setAttribute("value",Option5);
+option5.setAttribute("id",Option5);
+option5.innerHTML = Option5;
+
+option6.setAttribute("value",Option6);
+option6.setAttribute("id",Option6);
+option6.innerHTML = Option6;
+
+option7.setAttribute("value",Option7);
+option7.setAttribute("id",Option7);
+option7.innerHTML = Option7;
+
+option8.setAttribute("value",Option8);
+option8.setAttribute("id",Option8);
+option8.innerHTML = Option8;
+
+var mainBody = document.getElementsByTagName("BODY")[0];
+
+//if(document.getElementById("id01") ==null && currentSytem == euSystem || currentSytem == euSystem_stage)//
+//{ 
+mainBody.appendChild(div1); div1.appendChild(div2); div2.appendChild(div3); div3.appendChild(h2); div3.appendChild(selectList); selectList.appendChild(option0); selectList.appendChild(option1); selectList.appendChild(option2); selectList.appendChild(option3); selectList.appendChild(option4); selectList.appendChild(option5); selectList.appendChild(option6); selectList.appendChild(option7); selectList.appendChild(option8); selectList.appendChild(option9); div3.appendChild(submit); 
+//}
+
+getLoginStatus();
+
+}
+
+function showPopUp()
+{ document.getElementById('id01').style.display='block'; }
+
+function hidePopUp()
+{ document.getElementById('id01').style.display='none'; }
+
+function selectCountry(){
+var selectedCountry = document.getElementById("CountrySelect").value;
+//alert(selectedCountry)
+
+if ( selectedCountry != Option0){
+
+	if (currentSytem == euSystem){
+		//alert("EU PROD");
+		switch (selectedCountry)
+		{ 
+			case Option3: 
+			  setCookie("China"); 
+			  goTo("china_prod"); 
+			  break;
+			default: setCookie("Europe");
+			  hidePopUp(); 
+			  break; }
+		}
+	
+	if (currentSytem == euSystem_stage){
+		//alert("EU STAGE");
+		switch (selectedCountry)
+		{ 
+			case Option3: 
+			  setCookie("China"); 
+			  goTo("china_stage"); 
+			  break;
+			default: setCookie("Europe");
+			  hidePopUp(); 
+			  break; }
+		}
+}
+			
+}
+  
+
+//function to decide which page to redirect
+//function to decide which page to redirect
+function goTo(country){
+	current_page = window.location.href.split('.jsf');
+	first_url_part = current_page[0].split('/');
+	second_url_part = current_page[1];
+  var countryRedirect;
+  console.log(first_url_part);
+  console.log(second_url_part);
+  
+  document.getElementById("pop_up_msg").innerHTML=redirectionMsg;
+  document.getElementById("Go").disabled = true;
+  document.getElementById("CountrySelect").disabled = true;
+
+  switch (country){
+		  //only considers homepage.  If more than 1 external page then this needs to be extended
+		case "china_prod":
+		  countryRedirect = chinaSystem;
+		  break;
+		
+		case "china_stage":
+		  countryRedirect = chinaSystem_stage;
+		  break;
+  }
+  
+	  switch (first_url_part[first_url_part.length-1]){
+		  //only considers homepage.  If more than 1 external page then this needs to be extended
+		case "new-external-dashboard":
+        window.location = "https://"+countryRedirect+"/ilp"+ window.location.href.split('ilp')[1];
+		  break;
+		case "login":
+         //alert(countryRedirect);
+		  window.location = "https://"+countryRedirect+"/ilp"+ window.location.href.split('ilp')[1];
+		  break;
+		default:
+		//go to a single specific
+        //alert(countryRedirect);
+         //alert(countryRedirect);
+		 //if(country == "china"){
+		 
+		 // window.location ="https://"+countryRedirect+"/ilp/pages/new-external-dashboard.jsf?#/?dashboardId=114621"
+		   window.location ="https://"+countryRedirect+"/idm/oidc/login";
+		//  }
+	  }
+	
+	//window.location = "https://"+country;
+}
+
+var modal_styles = ".modal-content { margin: auto; background-color: #fff; position: relative; padding: 0; outline: 0; width: 90%; max-width: 600px; padding: 10px 10px 10px 10px;}.container { padding: 10px 10px 10px 10px; padding-bottom: 20px;}.modal { z-index: 9999; display: none; padding-top: 100px; position: fixed; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.4);}";
+
+var styleSheet = document.createElement("style")
+styleSheet.type = "text/css"
+styleSheet.innerText = modal_styles
+document.head.appendChild(styleSheet)
+
+createPopup();
+//alert("end loaded");
+</script><div id="id01" style="z-index:9999" class="modal"><div class="modal-content"><div class="container"><p id="pop_up_msg">To ensure that we provide the best online customer experience possible and direct you to the relevant ACCA Learning site, please select from the following options based on your location:</p><select name="Country selection" id="CountrySelect">Pick a country<option option="Select your location" id="Select your location" disabled="" selected="" value="">Select your location</option><option value="Canada" id="Canada">Canada</option><option value="Ireland" id="Ireland">Ireland</option><option value="Chinese mainland" id="Chinese mainland">Chinese mainland</option><option value="Malaysia" id="Malaysia">Malaysia</option><option value="Singapore" id="Singapore">Singapore</option><option value="United Kingdom" id="United Kingdom">United Kingdom</option><option value="United States of America" id="United States of America">United States of America</option><option value="Rest of the world" id="Rest of the world">Rest of the world</option><option></option></select><button id="Go" onclick="selectCountry()" class="cell button-element togglable small-button">Go</button></div></div></div>
+
+	<script type="text/javascript">
+        (function() {
+            function reloadFonts() {
+                var link = document.createElement("link");
+                link.href = "/ilp/resources/design/css/fonts.css?dmy=" + Math.random();
+                link.type = "text/css";
+                link.rel = "stylesheet";
+                document.getElementsByTagName("head")[0].appendChild(link);
+            }
+
+            var isAppleDevice = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i);
+            if (isAppleDevice) {
+                reloadFonts();
+            }
+        })();
+    </script>
+        <!-- IGSPolling BEGIN -->
+        <script>
+            var igsPollingAppConfig = {
+                appPath: "/ilp/igspolling/",
+                pollingMode: "off",
+                pollingInterval: "10",
+                pollingBackInTimeDuration: "5",
+                pollingMaxNumberOfRounds: "2",
+                initOnStartUp: true
+            };
+        </script>
+
+        <script>embedJavascriptResources([ 
+
+{ 'identifier':'angular' },
+{ 'identifier':'angular-route' },
+{ 'identifier':'angular-cookies' },
+{ 'identifier':'elastic' },
+{ 'identifier':'angularjs-filters' },
+{ 'identifier':'angular-animate' },
+{ 'identifier':'loading-bar' },
+{ 'identifier':'angular-aria' },
+{ 'identifier':'imc-loading-spinner' },
+{ 'identifier':'ng-file-upload' },
+{ 'identifier':'angular-translate' },
+{ 'identifier':'imc-templating-module' },
+{ 'identifier':'angular-sanitize' },
+{ 'identifier':'imc-sanitize' },
+{ 'identifier':'translateIMCCustomLoaderService' },
+{ 'identifier':'angular-translate-imc-loader' },
+{ 'identifier':'angular-translate-imc-decorator' },
+{ 'identifier':'session-expired-reveal' },
+{ 'path': igsPollingAppConfig.appPath + 'js_vendor_min/app.dd08dc8e04.min.js'} ], function() {
+
+      angular.bootstrap(document.getElementById('igspolling'), ['igspollingApp']);
+
+}
+);</script>
+
+        <div id="igspolling" data-ng-controller="igspollingController as igsPollingAccess" class="ng-scope">
+        </div>
+        <!-- IGSPolling END -->
+    <!-- scroll to top button:start -->
+    <style>
+
+        #scroll-to-top-button {
+            display: flex;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            border-radius: 50%;
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            transition: opacity 0.5s, visibility 0.5s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+            background: #999;
+            font-size: 10px;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .2);
+            padding: 14px;
+            box-sizing: border-box;
+        }
+
+        #scroll-to-top-button svg {
+            fill: #fff;
+            width: 16px; /* safari fix */
+        }
+
+        #scroll-to-top-button.none {
+            display: none;
+        }
+
+        #scroll-to-top-button.show {
+            opacity: 0.9;
+            visibility: visible;
+        }
+
+    </style>
+
+    <a id="scroll-to-top-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+            <path d="M32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l320 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 32zM214.6 169.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 269.3 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-178.7 73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"></path>
+        </svg>
+    </a>
+
+    <script>
+        <!--
+        var isSamsungBrowser = navigator.userAgent.toLowerCase().indexOf('samsungbrowser') !== -1;
+        // checks if is a "touch device"
+        if (!isSamsungBrowser && (('ontouchstart' in window) || (navigator.maxTouchPoints > 0)) && (window.innerWidth < 1024)) {
+            $(function () {
+                var hideTimeout;
+                window.addEventListener('scroll', function () {
+                    clearTimeout(hideTimeout);
+                    if (window.scrollY > 0) {
+                        $('#scroll-to-top-button').addClass('show');
+                    } else {
+                        $('#scroll-to-top-button').removeClass('show');
+                    }
+                    hideTimeout = setTimeout(function () {
+                        $('#scroll-to-top-button').removeClass('show');
+                    }, 2000);
+                }, false);
+
+                $('#scroll-to-top-button').click(function () {
+                    $('html, body').animate({scrollTop: 0}, 300);
+                    return false;
+                });
+            });
+        } else {
+            $('#scroll-to-top-button').addClass('none');
+        }
+        -->
+    </script>
+
+    <!-- scroll to top button:end -->
+<script>_satellite["_runScript1"](function(event, target, Promise) {
+// debug logging function
+window.adobeDataLayer = window.adobeDataLayer || [];
+var myHandler = function (event) {
+    if (localStorage.getItem("com.adobe.reactor.debug") === "true") {
+        console.log(
+            "%c[Adobe Data Layer Logging] event type: " + event.event, "background: palegreen", "State:", JSON.stringify(adobeDataLayer.getState(), null, 2)
+        );
+    }
+};
+
+// add event listener
+window.adobeDataLayer.push(function (dl) {
+    dl.addEventListener("adobeDataLayer:event", myHandler);
+});
+
+});</script><script type="text/javascript">
+_linkedin_partner_id = "1794308";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script>
+<script type="text/javascript">
+(function() { var s = document.getElementsByTagName("script")[0]; var b = document.createElement("script");
+    b.type = "text/javascript";
+    b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s); })();
+</script> <noscript></noscript><!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BY7MHD6PT8"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); } 
+  gtag('js', new Date());
+
+  gtag('config', 'G-BY7MHD6PT8');
+
+</script><!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-J7W3P5MX6E"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); } 
+  gtag('js', new Date());
+
+  gtag('config', 'G-J7W3P5MX6E');
+
+</script><!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=DC-9391713"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'DC-9391713');
+
+  gtag('config', 'AW-968628456'); // Main Google Ads destination (MCC / consolidated)
+</script>
+<!-- End of global snippet --><script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+
+  ttq.load('CMRMLD3C77UEANSKJOK0');
+  ttq.page();
+}(window, document, 'ttq');
+</script><!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '283104012024433');
+  fbq('track', 'PageView');
+</script>
+<noscript></noscript>
+<!-- End Facebook Pixel Code --><script async="" src="https://uk1.siteimprove.com/js/siteanalyze_11016.js"></script></body>
